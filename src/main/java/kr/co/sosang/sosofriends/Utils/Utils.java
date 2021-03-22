@@ -1,0 +1,139 @@
+package kr.co.sosang.sosofriends.Utils;
+
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
+public class Utils {
+     public static String chkNull(String str){
+         if(str ==null){
+             return "";
+         }
+         return  str;
+     }
+
+     public static String chkNull(Object str) {
+         String d = (String) str;
+         if (str == null) {
+             return "";
+         }
+         return d;
+     }
+
+    /* 여기서 부터 날짜 관련 함수*/
+
+    /*포맷2021.10.10*/
+    public static String formatYMD(String ymd){
+
+        if(ymd.length() <8){
+            return ymd;
+        }
+        StringBuilder sb =new StringBuilder();
+        sb.append(ymd.substring(0,4));
+        sb.append(ymd.substring(4,6));
+        sb.append(ymd.substring(6,10));
+
+        return sb.toString();
+    }
+
+    /*포맷:2021-03-22 24:00:00*/
+    public static String formatHM(String ymdhms){
+        StringBuilder sb = new StringBuilder();
+        sb.append(ymdhms.substring(0, 4)).append("-");
+        sb.append(ymdhms.substring(4, 6)).append("-");
+        sb.append(ymdhms.substring(6, 8)).append(" ");
+        sb.append(ymdhms.substring(8, 10)).append(":");
+        sb.append(ymdhms.substring(10, 12)).append(":");
+        sb.append(ymdhms.substring(12, 14));
+        return sb.toString();
+    }
+
+    /*포맷:long형태로 변환*/
+    public static long formatHMS(String ymdhms){
+        GregorianCalendar cal = new GregorianCalendar();
+        Integer.parseInt(ymdhms.substring(0,4));
+        Integer.parseInt(ymdhms.substring(4,6));
+        Integer.parseInt(ymdhms.substring(6,8));
+        Integer.parseInt(ymdhms.substring(8,10));
+        Integer.parseInt(ymdhms.substring(10,12));
+        Integer.parseInt(ymdhms.substring(12,14));
+        return cal.getTimeInMillis();
+    }
+
+    /*포맷:현재년월일을 Str로 반환 ex)20210311*/
+    public static String formatStrDay1(){
+        GregorianCalendar cal = new GregorianCalendar();
+        StringBuilder sb = new StringBuilder();
+        sb.append(Utils.numFormat(cal.get(Calendar.YEAR), "0000")).
+                append(Utils.numFormat(cal.get(Calendar.MONTH) + 1, "00")).
+                append(Utils.numFormat(cal.get(Calendar.DAY_OF_MONTH), "00"));
+        return sb.toString();
+    }
+
+    /*포맷:현재년월일을 Str로 반환 ex)2021-03-11*/
+    public static String formatStrDay2(){
+        GregorianCalendar cal = new GregorianCalendar();
+        StringBuilder sb = new StringBuilder();
+        sb.append(Utils.numFormat(cal.get(Calendar.YEAR), "0000")).
+                append("-").
+                append(Utils.numFormat(cal.get(Calendar.MONTH) + 1, "00")).
+                append("-").
+                append(Utils.numFormat(cal.get(Calendar.DAY_OF_MONTH), "00"));
+        return sb.toString();
+    }
+
+
+    /*포맷: 현재시간 가지고 오기 ex)Sat Jul 12 16:03:00 GMT+01:00 2000*/
+    public static String pastTime(){
+        Date today = new Date();
+        StringBuilder sb = new StringBuilder();
+        sb.append(today);
+        return sb.toString();
+    }
+
+   /* 현재 년월시 문자열 반환*/
+   public static String getPastTimeH(){
+        GregorianCalendar cal = new GregorianCalendar();
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(Utils.numFormat(cal.get(Calendar.YEAR),"0000"))
+                .append(Utils.numFormat(cal.get(Calendar.MONTH)+1,"00"))
+                .append(Utils.numFormat(cal.get(Calendar.DAY_OF_MONTH),"00"))
+                .append(Utils.numFormat(cal.get(Calendar.HOUR_OF_DAY),"00"));
+        return sb.toString();
+   }
+
+    /* 현재 년월시분 문자열 반환*/
+    public static String getPastTimeM(){
+        GregorianCalendar cal = new GregorianCalendar();
+        StringBuilder sb = new StringBuilder();
+        sb.append(Utils.numFormat(cal.get(Calendar.YEAR),"0000"))
+                .append(Utils.numFormat(cal.get(Calendar.MONTH)+1,"00"))
+                .append(Utils.numFormat(cal.get(Calendar.DAY_OF_MONTH),"00"))
+                .append(Utils.numFormat(cal.get(Calendar.HOUR_OF_DAY),"00"))
+                .append(Utils.numFormat(cal.get(Calendar.MINUTE),"00"));
+        return sb.toString();
+    }
+
+    /* 현재 년월시분초 문자열 반환*/
+    public static String getPastTimeS(){
+        GregorianCalendar cal = new GregorianCalendar();
+        StringBuilder sb = new StringBuilder();
+        sb.append(Utils.numFormat(cal.get(Calendar.YEAR),"0000"))
+                .append(Utils.numFormat(cal.get(Calendar.MONTH)+1,"00"))
+                .append(Utils.numFormat(cal.get(Calendar.DAY_OF_MONTH),"00"))
+                .append(Utils.numFormat(cal.get(Calendar.HOUR_OF_DAY),"00"))
+                .append(Utils.numFormat(cal.get(Calendar.MINUTE),"00"))
+                .append(Utils.numFormat(cal.get(Calendar.SECOND),"00"));
+        return sb.toString();
+    }
+
+
+    /* 포맷:v는 넣을 값, format 은 문자나 형식*/
+    public static String numFormat(double v,String format){
+        NumberFormat formatter = new DecimalFormat(format);
+        return formatter.format(v);
+    }
+}
