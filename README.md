@@ -1,6 +1,6 @@
 
 ## Sosang-project		
-r2021-03-22 ~2021-05-28
+2021-03-22 ~2021-05-28
 
 **Kakaofriends** clone-coding
 
