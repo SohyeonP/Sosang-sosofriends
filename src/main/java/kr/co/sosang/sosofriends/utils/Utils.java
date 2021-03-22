@@ -1,4 +1,4 @@
-package kr.co.sosang.sosofriends.Utils;
+package kr.co.sosang.sosofriends.utils;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
