@@ -1,26 +1,28 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
-html {overflow-y:scroll; font-family: 'Noto Sans KR';}
-body {margin:0;padding:0;font-size:16px;background:#fff;font-family: 'Noto Sans KR';font-weight: 300}
+html {overflow-y:scroll; font-family: 'NanumSquare', sans-serif;}
+body {margin:0;padding:0;font-size:16px;background:#fff;font-family: 'NanumSquare', sans-serif;}
 
-html, h1, h2, h3, h4, h5, h6, form, fieldset, img {margin:0;padding:0;border:0;font-family: 'Noto Sans KR';}
-h1, h2, h3, h4, h5, h6 {font-size:16px;font-family: 'Noto Sans KR';}
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block; font-family: 'Noto Sans KR';}
+html, h1, h2, h3, h4, h5, h6, form, fieldset, img {margin:0;padding:0;border:0;font-family: 'NanumSquare', sans-serif;}
+h1, h2, h3, h4, h5, h6 {font-size:16px;font-family: 'NanumSquare', sans-serif;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block;font-family: 'NanumSquare', sans-serif;}
 
-ul, dl,dt,dd {margin:0;padding:0;list-style:none; font-family: 'Noto Sans KR';}
-legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden; font-family: 'Noto Sans KR';}
+ul, dl,dt,dd {margin:0;padding:0;list-style:none;font-family: 'NanumSquare', sans-serif;}
+legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden;font-family: 'NanumSquare', sans-serif;}
 label, input, button, select, img {vertical-align:middle;font-size:1em}
-input, button {margin:0;padding:0;font-family: 'Noto Sans KR';font-size:1em}
+input, button {margin:0;padding:0;font-family: 'NanumSquare', sans-serif;font-size:1em}
 input[type="submit"] {cursor:pointer}
 button {cursor:pointer}
 
-textarea, select {font-family: 'Noto Sans KR';font-size:1em}
+textarea, select {font-family: 'NanumSquare', sans-serif;font-size:1em}
 select {margin:0}
 p {margin:0;padding:0;word-break:break-all}
 hr {display:none}
 pre {overflow-x:scroll;}
 a {color:#000;text-decoration:none; cursor: pointer}
+
+/*font-family: 'Noto Sans KR';*/
 
 .wrp{position: relative; width: 100%; float: left}
 .wrpDiv{position: relative; max-width: 1280px; margin: 0 auto}
@@ -46,7 +48,7 @@ a {color:#000;text-decoration:none; cursor: pointer}
 .mainSlide .conTopTxt{font-size: 40px;}
 .mainSlide .conTopTxt span{font-size: 40px;}
 .mainSlide .conBtmTxt{font-size: 18px;}
-.mainSlide .veiwMore{position: relative; display: block; width: 185px; margin-top: 60px; border: 1px solid #111; padding: 11px 20px; border-radius: 25px;}
+.mainSlide .veiwMore{position: relative; display: block; width: 185px; margin-top: 60px; border: 1px solid #111; padding: 14px 20px; border-radius: 25px;}
 .mainSlide .veiwMore img{position: absolute; top: 15px; right: 22px;}
 
 .mainCon01{margin-top: 173px}
@@ -66,7 +68,9 @@ a {color:#000;text-decoration:none; cursor: pointer}
 .mainCon02 .con02right .rightLike{width: 100%; margin-top: 19px;}
 .mainCon02 .con02right .rightLike a{float: left; font-size: 14px; color: #BBBBBB; margin-right: 20px}
 .mainCon02 .con02right .rightLike a img{float: left; margin-right: 4px;}
-.mainCon02 .con02right .rightLike>a:first-child img{position: relative; top: 2px;}
+.mainCon02 .con02right .rightLike>a:nth-child(1) img{position: relative; top: -1px;}
+.mainCon02 .con02right .rightLike>a:nth-child(2) img{position: relative; top: -2px;}
+.mainCon02 .con02right .rightLike>a:nth-child(3) img{position: relative; top: -2px;}
 .mainCon02 .con02right .rightInput{width: 100%; background-color: #EEEEEE; border: none; border-radius: 0 27px 27px 27px; font-size: 14px; color: #111; padding: 14px 36px; margin-top: 15px;}
 .mainCon02 .con02right .rightInput::placeholder{font-size: 14px; color: #999999}
 .mainCon02 .con02right .pickTit{font-size: 16px; margin-top: 28px;}
@@ -104,7 +108,7 @@ a {color:#000;text-decoration:none; cursor: pointer}
 .mainCon04 .leftDiv{ width: calc(100% - 640px); float: left;}
 .mainCon04 .veiwMore{position: relative; display: block; width: 155px; margin-top: 92px; border: 1px solid #111; padding: 12px 20px}
 .mainCon04 .veiwMore img{position: absolute; top: 16px; right: 22px ;}
-.mainCon04 .conTopTxt{font-size: 30px;margin-bottom: 10px}
+.mainCon04 .conTopTxt{font-size: 30px;margin-bottom: 20px}
 .mainCon04 .conBtmTxt{font-size: 16px; line-height: 24px}
 .mainCon04 .rightDiv{ width: 640px; height: 320px; float: left;}
 .mainCon04 .rightDiv .rightDivImg{width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; background-position: center}
@@ -113,7 +117,7 @@ a {color:#000;text-decoration:none; cursor: pointer}
 .mainCon05 .conDiv{position: relative; width: calc((100% - 50px)/3); height: 520px; float: left; background-color: #eee; margin-right: 25px; background-size: cover; background-repeat: no-repeat; background-position: center; border-radius: 20px;}
 .mainCon05>.conDiv:nth-child(3){position: relative; top: 50px; background-color: #F7F7FA;}
 .mainCon05>.conDiv:last-child{margin-right: 0}
-.mainCon05 .conDiv p{position: absolute; bottom: 0px; padding: 30px 40px; font-size: 30px; margin-bottom: 0;}
+.mainCon05 .conDiv p{position: absolute; bottom: 0px; padding: 30px 40px; font-size: 30px; font-weight: bold; margin-bottom: 0;}
 .mainCon05 .conDiv a{position: absolute; bottom: 0; right: 0; padding: 30px 40px;}
 
 .footer{border-top: 1px solid #727272; margin-top: 240px;}
