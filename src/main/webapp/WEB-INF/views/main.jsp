@@ -1,18 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>main</title>
     <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
 </head>
 <body>
-<!--헤더 시작-->
+<%--aos.js 적용부분--%>
+<script type="text/javascript">
+    AOS.init({
+        offset:300,
+        duration:1500
+    });
+</script>
 
+<!--헤더 시작-->
 <div class="wrpDiv header_top">
     <a class="hd_logo">
         <img src="/assets/img/main/logo.PNG">
@@ -148,12 +160,12 @@
 
 <div class="wrp">
     <div class="wrpDiv mainCon04">
-        <div class="leftDiv">
+        <div class="leftDiv" data-aos="fade-right">
             <p class="conTopTxt">누구에게나 사랑받는, <br>국민 캐릭터 카카오프렌즈</p>
             <p class="conBtmTxt">저마다의 개성과 매력을 지닌 라이언, 무지, 어피치, 프로도, 네오, 튜브, 콘, 제이지. <br>카카오프렌즈의 위트넘치는 표정과 행동은 폭넓은 공감과 유쾌한 웃음을 선사합니다.</p>
             <a class="veiwMore">자세히 보기<img src="assets/img/main/arrow.png"></a>
         </div>
-        <div class="rightDiv">
+        <div class="rightDiv" data-aos="fade-left">
             <div class="rightDivImg" style="background-image: url(assets/img/main/con04.png)"></div>
         </div>
     </div>
@@ -169,19 +181,19 @@
             <a>WALLPAPER</a>
             <a>더보기</a>
         </div>
-        <div class="conDiv" style="background-image: url(assets/img/main/wp01.png)">
+        <div class="conDiv" data-aos="fade-up" style="background-image: url(assets/img/main/wp01.png)">
             <p>2021년 <br>2월의 배경화면</p>
             <a>
                 <img src="assets/img/main/b_arrow.png">
             </a>
         </div>
-        <div class="conDiv" style="background-image: url(assets/img/main/wp02.png)">
+        <div class="conDiv" data-aos="fade-up" data-aos-delay="100" style="background-image: url(assets/img/main/wp02.png)">
             <p>2021년 <br>3월의 배경화면</p>
             <a>
                 <img src="assets/img/main/b_arrow.png">
             </a>
         </div>
-        <div class="conDiv" style="background-image: url(assets/img/main/wp03.png)">
+        <div class="conDiv" data-aos="fade-up"style="background-image: url(assets/img/main/wp03.png)">
             <p>2021년 <br>4월의 배경화면</p>
             <a>
                 <img src="assets/img/main/b_arrow.png">
