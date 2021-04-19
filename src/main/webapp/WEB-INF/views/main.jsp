@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -18,10 +18,7 @@
 <body>
 <%--aos.js 적용부분--%>
 <script type="text/javascript">
-    AOS.init({
-        offset:300,
-        duration:1500
-    });
+    AOS.init();
 </script>
 
 <!--헤더 시작-->
@@ -78,32 +75,152 @@
 
 <!--메인 contents02 시작-->
 <div class="wrp">
-    <div class="wrpDiv mainCon02">
-        <div class="con02left"  style="background-image: url(assets/img/main/con02.png)">
+    <div class="wrpDiv mainCon02 swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="con02left"  style="background-image: url(assets/img/main/con02.png)"></div>
+                <div class="con02right">
+                    <div class="profile">
+                        <div style="background-image: url(assets/img/main/prof.png)"></div>
+                        <p class="profileTxt"><span>죠르디</span><br>1일전</p>
+                    </div>
+                    <a class="rightTit">왕초보운전자 필수템🚨</a>
+                    <a class="rightCon">귀염뽀짝 차량용품 나가신다 길을비켜라!!</a>
+                    <div class="rightLike">
+                        <a><img src="assets/img/main/like.png">좋아요 268</a>
+                        <a><img src="assets/img/main/comment.png">댓글 265</a>
+                        <a><img src="assets/img/main/share.png">공유하기</a>
+                    </div>
+                    <input type="text" placeholder="댓글을 달아주세요" class="rightInput">
+                    <p class="pickTit"><span>PICK!</span> 추천 상품</p>
+                    <div class="pickItem">
+                        <a class="pickItemCon">
+                            <div class="pickImg" style="background-image: url(assets/img/main/pickimg.png)"></div>
+                            <p>차량용목쿠션_죠르디<br><span>12,000원</span></p>
+                        </a>
+                        <a class="pickShop">
+                            <img src="assets/img/main/bag.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="con02left"  style="background-image: url(assets/img/main/con02.png)"></div>
+                <div class="con02right">
+                    <div class="profile">
+                        <div style="background-image: url(assets/img/main/prof.png)"></div>
+                        <p class="profileTxt"><span>죠르디</span><br>1일전</p>
+                    </div>
+                    <a class="rightTit">왕초보운전자 필수템🚨</a>
+                    <a class="rightCon">귀염뽀짝 차량용품 나가신다 길을비켜라!!</a>
+                    <div class="rightLike">
+                        <a><img src="assets/img/main/like.png">좋아요 268</a>
+                        <a><img src="assets/img/main/comment.png">댓글 265</a>
+                        <a><img src="assets/img/main/share.png">공유하기</a>
+                    </div>
+                    <input type="text" placeholder="댓글을 달아주세요" class="rightInput">
+                    <p class="pickTit"><span>PICK!</span> 추천 상품</p>
+                    <div class="pickItem">
+                        <a class="pickItemCon">
+                            <div class="pickImg" style="background-image: url(assets/img/main/pickimg.png)"></div>
+                            <p>차량용목쿠션_죠르디<br><span>12,000원</span></p>
+                        </a>
+                        <a class="pickShop">
+                            <img src="assets/img/main/bag.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="con02left"  style="background-image: url(assets/img/main/con02.png)"></div>
+                <div class="con02right">
+                    <div class="profile">
+                        <div style="background-image: url(assets/img/main/prof.png)"></div>
+                        <p class="profileTxt"><span>죠르디</span><br>1일전</p>
+                    </div>
+                    <a class="rightTit">왕초보운전자 필수템🚨</a>
+                    <a class="rightCon">귀염뽀짝 차량용품 나가신다 길을비켜라!!</a>
+                    <div class="rightLike">
+                        <a><img src="assets/img/main/like.png">좋아요 268</a>
+                        <a><img src="assets/img/main/comment.png">댓글 265</a>
+                        <a><img src="assets/img/main/share.png">공유하기</a>
+                    </div>
+                    <input type="text" placeholder="댓글을 달아주세요" class="rightInput">
+                    <p class="pickTit"><span>PICK!</span> 추천 상품</p>
+                    <div class="pickItem">
+                        <a class="pickItemCon">
+                            <div class="pickImg" style="background-image: url(assets/img/main/pickimg.png)"></div>
+                            <p>차량용목쿠션_죠르디<br><span>12,000원</span></p>
+                        </a>
+                        <a class="pickShop">
+                            <img src="assets/img/main/bag.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="con02left"  style="background-image: url(assets/img/main/con02.png)"></div>
+                <div class="con02right">
+                    <div class="profile">
+                        <div style="background-image: url(assets/img/main/prof.png)"></div>
+                        <p class="profileTxt"><span>죠르디</span><br>1일전</p>
+                    </div>
+                    <a class="rightTit">왕초보운전자 필수템🚨</a>
+                    <a class="rightCon">귀염뽀짝 차량용품 나가신다 길을비켜라!!</a>
+                    <div class="rightLike">
+                        <a><img src="assets/img/main/like.png">좋아요 268</a>
+                        <a><img src="assets/img/main/comment.png">댓글 265</a>
+                        <a><img src="assets/img/main/share.png">공유하기</a>
+                    </div>
+                    <input type="text" placeholder="댓글을 달아주세요" class="rightInput">
+                    <p class="pickTit"><span>PICK!</span> 추천 상품</p>
+                    <div class="pickItem">
+                        <a class="pickItemCon">
+                            <div class="pickImg" style="background-image: url(assets/img/main/pickimg.png)"></div>
+                            <p>차량용목쿠션_죠르디<br><span>12,000원</span></p>
+                        </a>
+                        <a class="pickShop">
+                            <img src="assets/img/main/bag.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="con02left"  style="background-image: url(assets/img/main/con02.png)"></div>
+                <div class="con02right">
+                    <div class="profile">
+                        <div style="background-image: url(assets/img/main/prof.png)"></div>
+                        <p class="profileTxt"><span>죠르디</span><br>1일전</p>
+                    </div>
+                    <a class="rightTit">왕초보운전자 필수템🚨</a>
+                    <a class="rightCon">귀염뽀짝 차량용품 나가신다 길을비켜라!!</a>
+                    <div class="rightLike">
+                        <a><img src="assets/img/main/like.png">좋아요 268</a>
+                        <a><img src="assets/img/main/comment.png">댓글 265</a>
+                        <a><img src="assets/img/main/share.png">공유하기</a>
+                    </div>
+                    <input type="text" placeholder="댓글을 달아주세요" class="rightInput">
+                    <p class="pickTit"><span>PICK!</span> 추천 상품</p>
+                    <div class="pickItem">
+                        <a class="pickItemCon">
+                            <div class="pickImg" style="background-image: url(assets/img/main/pickimg.png)"></div>
+                            <p>차량용목쿠션_죠르디<br><span>12,000원</span></p>
+                        </a>
+                        <a class="pickShop">
+                            <img src="assets/img/main/bag.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="con02right">
-            <div class="profile">
-                <div style="background-image: url(assets/img/main/prof.png)"></div>
-                <p class="profileTxt"><span>죠르디</span><br>1일전</p>
-            </div>
-            <a class="rightTit">왕초보운전자 필수템🚨</a>
-            <a class="rightCon">귀염뽀짝 차량용품 나가신다 길을비켜라!!</a>
-            <div class="rightLike">
-                <a><img src="assets/img/main/like.png">좋아요 268</a>
-                <a><img src="assets/img/main/comment.png">댓글 265</a>
-                <a><img src="assets/img/main/share.png">공유하기</a>
-            </div>
-            <input type="text" placeholder="댓글을 달아주세요" class="rightInput">
-            <p class="pickTit"><span>PICK!</span> 추천 상품</p>
-            <div class="pickItem">
-                <a class="pickItemCon">
-                    <div class="pickImg" style="background-image: url(assets/img/main/pickimg.png)"></div>
-                    <p>차량용목쿠션_죠르디<br><span>12,000원</span></p>
-                </a>
-                <a class="pickShop">
-                    <img src="assets/img/main/bag.png">
-                </a>
-            </div>
+        <div class="slidePage"></div>
+        <div class="slidePageBtn">
+            <button class="prev">&lt;</button>
+            <button class="next">&gt;</button>
         </div>
     </div>
 </div>
@@ -160,12 +277,12 @@
 
 <div class="wrp">
     <div class="wrpDiv mainCon04">
-        <div class="leftDiv" data-aos="fade-right">
+        <div class="leftDiv" data-aos="fade-right" data-aos-offset="200" data-aos-duration="2500">
             <p class="conTopTxt">누구에게나 사랑받는, <br>국민 캐릭터 카카오프렌즈</p>
             <p class="conBtmTxt">저마다의 개성과 매력을 지닌 라이언, 무지, 어피치, 프로도, 네오, 튜브, 콘, 제이지. <br>카카오프렌즈의 위트넘치는 표정과 행동은 폭넓은 공감과 유쾌한 웃음을 선사합니다.</p>
             <a class="veiwMore">자세히 보기<img src="assets/img/main/arrow.png"></a>
         </div>
-        <div class="rightDiv" data-aos="fade-left">
+        <div class="rightDiv" data-aos="fade-left" data-aos-offset="200" data-aos-duration="2500">
             <div class="rightDivImg" style="background-image: url(assets/img/main/con04.png)"></div>
         </div>
     </div>
@@ -181,19 +298,19 @@
             <a>WALLPAPER</a>
             <a>더보기</a>
         </div>
-        <div class="conDiv" data-aos="fade-up" style="background-image: url(assets/img/main/wp01.png)">
+        <div class="conDiv" data-aos="fade-up" data-aos-offset="300" style="background-image: url(assets/img/main/wp01.png)">
             <p>2021년 <br>2월의 배경화면</p>
             <a>
                 <img src="assets/img/main/b_arrow.png">
             </a>
         </div>
-        <div class="conDiv" data-aos="fade-up" data-aos-delay="100" style="background-image: url(assets/img/main/wp02.png)">
+        <div class="conDiv" data-aos="fade-up" data-aos-offset="300" data-aos-delay="100" style="background-image: url(assets/img/main/wp02.png)">
             <p>2021년 <br>3월의 배경화면</p>
             <a>
                 <img src="assets/img/main/b_arrow.png">
             </a>
         </div>
-        <div class="conDiv" data-aos="fade-up"style="background-image: url(assets/img/main/wp03.png)">
+        <div class="conDiv" data-aos="fade-up" data-aos-offset="300" style="background-image: url(assets/img/main/wp03.png)">
             <p>2021년 <br>4월의 배경화면</p>
             <a>
                 <img src="assets/img/main/b_arrow.png">
@@ -230,6 +347,26 @@
 
 
 
-
+<script type="text/javascript" src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script type="text/javascript">
+    const swiper = new Swiper('.swiper-container', {
+        effect: 'coverflow',
+        loop: true,
+        loopAdditionalSlides : 1,
+        navigation: {
+          nextEl: '.slidePageBtn .next',
+          prevEl: '.slidePageBtn .prev',
+        },
+        autoplay:{
+          delay: 5000,
+          disableOnInteraction : false
+        },
+        pagination: {
+            el: '.slidePage',
+            type: 'fraction',
+        },
+        allowTouchMove : false
+    });
+</script>
 </body>
 </html>
