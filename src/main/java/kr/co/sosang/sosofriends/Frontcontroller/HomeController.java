@@ -13,4 +13,10 @@ public class HomeController {
 		
 		return "main";
 	}
+	
+	@RequestMapping(value="/admin")
+	public String admin() {
+		
+		return "admin";
+	}
 }
