@@ -2,6 +2,7 @@ package kr.co.sosang.sosofriends.admin.controller;
 
 
 import java.util.HashMap;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import kr.co.sosang.sosofriends.admin.domain.Productinfo;
 import kr.co.sosang.sosofriends.utils.Utils;
 
+import javax.naming.event.ObjectChangeListener;
+
 @RestController
 @SuppressWarnings("unchecked")
 public class AdminController {
@@ -21,7 +24,7 @@ public class AdminController {
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 	
 	  
-	@RequestMapping(value="/admin/addpd",method= {RequestMethod.GET,RequestMethod.POST})
+	@RequestMapping(value="/additems.do",method= {RequestMethod.GET,RequestMethod.POST})
 	public ResponseEntity<String> AddProduct(@RequestBody Productinfo request){
 		/* 상품 아이디, 상품 코드, 상품 가격, 상품 하트 횟수,상품 판매 카운트, 상품 등록일 */
 		
@@ -38,7 +41,9 @@ public class AdminController {
 	public String createProductNum(String catenum,String catecode) {
 		
 		String cate= catenum;
-		
+		Map<String,Object> paramMap = new HashMap();
+
+		paramMap.put("catenum",catenum);
 		String pronum;
 		
 		return null;
