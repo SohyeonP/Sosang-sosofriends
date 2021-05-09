@@ -19,6 +19,10 @@
 <%--aos.js 적용부분--%>
 <script type="text/javascript">
     AOS.init();
+    $("#social_login").click(function (){
+
+    });
+
 </script>
 
 <!--헤더 시작-->
@@ -27,7 +31,7 @@
         <img src="/assets/img/main/logo.PNG">
     </a>
     <div class="hd_login">
-        <a>로그인</a>
+        <a id="social_login">로그인</a>
         <p>|</p>
         <a>회원가입</a>
         <p>|</p>
@@ -325,7 +329,7 @@
 
 <div class="wrp footer">
     <div class="wrpDiv ft01">
-        <a>교육을 품다</a>
+        <a>카카오프렌즈 브랜드스토리</a>
         <p>|</p>
         <a>개인정보처리방침</a>
         <p>|</p>

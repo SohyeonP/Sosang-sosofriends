@@ -4,6 +4,6 @@
     <title>sosofriends</title>
 </head>
 <body>
-
+	메인입니다
 </body>
 </html>

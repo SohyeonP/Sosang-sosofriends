@@ -130,10 +130,19 @@ public class Utils {
         return sb.toString();
     }
 
-
-    /* 포맷:v는 넣을 값, format 은 문자나 형식*/
-    public static String numFormat(double v,String format){
-        NumberFormat formatter = new DecimalFormat(format);
-        return formatter.format(v);
+	    /* 포맷:v는 넣을 값, format 은 문자나 형식*/
+	    public static String numFormat(double v,String format){
+	        NumberFormat formatter = new DecimalFormat(format);
+	        return formatter.format(v);
+	    }
+    
+    
+    
+   
+    public static int chkNull(int str) {
+        if (str == 0) {
+            return 0;
+        }
+        return str;
     }
 }
