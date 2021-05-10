@@ -136,8 +136,24 @@ public class Utils {
 	        return formatter.format(v);
 	    }
     
-    
-    
+	    /**
+	     * 문자로된 숫자의 표현식을 자리수에 맞는 숫자로표현(예: 23->0023)
+	     * @param number
+	     * @param cnt
+	     * @return
+	     */
+	    public static String stringNumberToZeroStringNumber(String number, int cnt){
+	        
+	        String str = number.trim();
+	        if(number == null) return "";
+	        
+	        cnt = cnt - str.length();
+	        for(int i = 0 ; i < cnt ; i++){
+	            str = "0" + str;
+	        }
+	        return str;
+	        
+	    }
    
     public static int chkNull(int str) {
         if (str == 0) {
