@@ -196,6 +196,28 @@ a {color:#000;text-decoration:none; cursor: pointer}
 
 /**  상품 상세페이지 끝 **/
 
+/**  매장안내 시작 **/
+
+.store-area p{font-size: 20px; line-height: 35px; margin: 80px 0 0;}
+.store-area p span{font-size: 30px; font-weight: bold; line-height: 55px;}
+.store-area img{position: relative; left: -74px;}
+.store-area ul{}
+.store-area ul li{position: relative; font-size: 16px; color: #999; line-height: 30px; padding-left: 20px;}
+.store-area ul li:before{content: '▶'; position: absolute;left: 0}
+
+/**  매장안내 끝 **/
+
+
+/**  브랜드스토리 시작 **/
+
+.story-area{text-align: center}
+.story-area img{}
+.story-area p{font-size: 18px; line-height: 27px; margin:30px 0 100px;}
+.story-area p:nth-child(3){margin:0px 0 150px;}
+.story-area img:first-child{margin-bottom: 70px;}
+
+/**  브랜드스토리 끝 **/
+
 
 /** 페이징 시작 **/
 
