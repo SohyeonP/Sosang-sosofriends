@@ -22,33 +22,33 @@
             <label for="charselect" class="form-label">캐릭터 종류</label>
             <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="charselect">
                 <option selected>캐릭터 선택</option>
-                    <option value="1">라이언</option>
-                    <option value="2">어피치</option>
-                    <option value="3">무지</option>
-                    <option value="4">프로도</option>
-                    <option value="5">네오</option>
-                    <option value="6">튜브</option>
-                    <option value="7">제이지</option>
-                    <option value="8">콘</option>
-                    <option value="9">죠르디</option>
-                    <option value="10">스카피</option>
-                    <option value="11">앙몬드</option>
-                    <option value="12">팬다주이너</option>
+                    <option value="R">라이언</option>
+                    <option value="A">어피치</option>
+                    <option value="M">무지</option>
+                    <option value="F">프로도</option>
+                    <option value="N">네오</option>
+                    <option value="T">튜브</option>
+                    <option value="Ja">제이지</option>
+                    <option value="C">콘</option>
+                    <option value="Jo">죠르디</option>
+                    <option value="S">스카피</option>
+                    <option value="Ag">앙몬드</option>
+                    <option value="P">팬다주이너</option>
                 </select>
                 <label for="cateselect" class="form-label">카테고리 종류</label>
                 <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="cateselect">
                     <option selected>카테고리 선택</option>
-                    <option value="1">테마기획전</option>
-                    <option value="2">토이</option>
-                    <option value="3">리빙</option>
-                    <option value="4">잡화</option>
-                    <option value="5">문구</option>
-                    <option value="6">의류</option>
-                    <option value="7">파자마</option>
-                    <option value="8">여행/래저</option>
-                    <option value="9">생활테크</option>
-                    <option value="10">폰액세서리</option>
-                    <option value="11">식품</option>
+                    <option value="Y">테마기획전</option>
+                    <option value="T">토이</option>
+                    <option value="L">리빙</option>
+                    <option value="D">잡화</option>
+                    <option value="M">문구</option>
+                    <option value="O">의류</option>
+                    <option value="P">파자마</option>
+                    <option value="V">여행/래저</option>
+                    <option value="H">생활테크</option>
+                    <option value="A">폰액세서리</option>
+                    <option value="F">식품</option>
                 </select>
         </div>
         <div class="mb-3">
