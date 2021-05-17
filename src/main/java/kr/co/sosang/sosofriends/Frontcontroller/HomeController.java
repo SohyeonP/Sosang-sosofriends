@@ -1,11 +1,8 @@
 package kr.co.sosang.sosofriends.Frontcontroller;
 
-import org.apache.jasper.tagplugins.jstl.core.Redirect;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
@@ -18,6 +15,16 @@ public class HomeController {
 	@GetMapping(value = "/additems")
 	public String AddItems(){
 		return "fileupload";
+	}
+	
+	@RequestMapping(value="/store")
+	public String store() {
+		return "store_info";
+	}
+	
+	@RequestMapping(value="/items")
+	public String item() {
+		return "product_list";
 	}
 
 	@RequestMapping(value = "/login")
