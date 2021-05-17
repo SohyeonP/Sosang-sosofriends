@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mapper.adminmapper">
-        <insert id="additems" parameterType="Map">
-
-        </insert>
+<mapper namespace="kr.co.sosang.mapper.adminmapper">
+     	<select id= "getlastNum" parameterType ="String">
+     			select cast(substring(kpi_code,2,4)as integer)
+				from public.kfs_product_info
+				where kpi_cate_k = #{str}
+     	</select>
+     	
+     	<insert id = "addItems" parameterType="Map">
+			INSERT INTO public.kfs_product_info
+			(kpi_name
+			 ,kpi_code
+			 ,kpi_price
+			 ,kpi_reg_date
+			 ,kpi_cate_k
+			 <if test="!img != null and !img.equals('')">
+			 ,kpi_cate_img 
+			 </if>
+			 )values(
+			  #{name}
+			 ,#{pdtnum}
+			 ,#{price}
+			 ,CURRENT_TIMESTAMP
+			 ,#{code}
+			 <if test="!img != null and !img.equals('')">
+			 #{img}
+			 </if>
+			)
+     	</insert>  
 </mapper>

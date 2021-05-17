@@ -10,7 +10,7 @@ import kr.co.sosang.sosofriends.config.WebSecurityConfig;
 
 
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
-@SpringBootApplication(exclude= {WebSecurityConfig.class})
+@SpringBootApplication
 public class SosangProjectApplication {
 
 	public static void main(String[] args) {
