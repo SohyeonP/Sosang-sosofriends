@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<c:set var="contextpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <%--<script type="text/javascript" src="${contextpath}/static/assets/js/common.js"></script>--%>
+    <script type="text/javascript" src="/assets/js/common.js"></script>
     <link rel="stylesheet" href="/assets/css/fileupload.css">
     <title>Insert title here</title>
 </head>
@@ -16,11 +15,11 @@
         <div class="mb-3">
             <%--이미지,가격,제품 이름, 제품 등록번호,상세설명--%>
             <label for="name" class="form-label">제품 이름</label>
-            <input type="name" class="form-control" id="name">
+            <input type="text" name="p_name" class="form-control" id="name">
             <label for="price" class="form-label">제품 가격</label>
-            <input type="number" class="form-control" id="price">
+            <input type="number" name="p_price" class="form-control" id="price">
             <label for="charselect" class="form-label">캐릭터 종류</label>
-            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="charselect">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="charselect" name="character_code">
                 <option selected>캐릭터 선택</option>
                     <option value="R">라이언</option>
                     <option value="A">어피치</option>
@@ -36,7 +35,7 @@
                     <option value="P">팬다주이너</option>
                 </select>
                 <label for="cateselect" class="form-label">카테고리 종류</label>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="cateselect">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="cateselect" name="cate_code">
                     <option selected>카테고리 선택</option>
                     <option value="Y">테마기획전</option>
                     <option value="T">토이</option>
@@ -59,7 +58,7 @@
             </div>
 
         </div>
-        <button type="등록하기" class="btn btn-primary" id ="additems">Submit</button>
+        <button type="button" class="btn btn-primary" id ="additems">Submit</button>
     </form>
 </body>
 <script>
