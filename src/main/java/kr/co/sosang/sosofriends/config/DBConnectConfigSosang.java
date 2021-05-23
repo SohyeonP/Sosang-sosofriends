@@ -29,7 +29,7 @@ public class DBConnectConfigSosang {
 
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(devDataSource);
-        sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:mapper/*.xml"));
+        sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath*:/mapper/*.xml"));
 
         return sqlSessionFactoryBean.getObject();
     }
@@ -37,6 +37,7 @@ public class DBConnectConfigSosang {
     @Bean
     SqlSessionTemplate sosangSqlSessionFactory(SqlSessionFactory sosangsqlSessionFactory) throws Exception{
         return new SqlSessionTemplate(sosangsqlSessionFactory);
+
     }
 
     @Bean
@@ -49,7 +50,7 @@ public class DBConnectConfigSosang {
     @Bean 
 	@ConfigurationProperties(prefix = "mybatis.configuration") 
 	public org.apache.ibatis.session.Configuration mybatisConfig() {
-		
+
 		return new org.apache.ibatis.session.Configuration(); 
 		}
 

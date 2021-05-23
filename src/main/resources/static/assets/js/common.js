@@ -3,10 +3,10 @@
 common={
     additems :function(){
         var itemname = $("#name").val();
-        var kakaoitems = $("form[name=itemform]").serializeToString();
+        var kakaoitems = $("form[name=itemform]").serialize();
         console.log(kakaoitems);
         
-        $.ajax({
+       /* $.ajax({
             type: "POST",
             url: "../additems.do",
             dataType: "json",
@@ -26,6 +26,6 @@ common={
                 console.log(err);
 
             }
-        });
+        });*/
     }
 }
