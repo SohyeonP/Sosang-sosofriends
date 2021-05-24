@@ -6,6 +6,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
 public class Utils {
      public static String chkNull(String str){
          if(str ==null){
@@ -136,13 +140,42 @@ public class Utils {
 	        return formatter.format(v);
 	    }
     
+	    /**
+	     * 문자로된 숫자의 표현식을 자리수에 맞는 숫자로표현(예: 23->0023)
+	     * @param number
+	     * @param cnt
+	     * @return
+	     */
+	    public static String stringNumberToZeroStringNumber(String number, int cnt){
+	        
+	        String str = number.trim();
+	        if(number == null) return "";
+	        
+	        cnt = cnt - str.length();
+	        for(int i = 0 ; i < cnt ; i++){
+	            str = "0" + str;
+	        }
+	        return str;
+	        
+	    }
+	    public static int chkNull(int str) {
+	        if (str == 0) {
+	            return 0;
+	        }
+	        return str;
+	    }
+	    public static ResponseEntity<String> responseentity(String data){
+			return new ResponseEntity<String>(data, getHttpheader(), HttpStatus.OK);
+		}
+	    public static HttpHeaders getHttpheader(){
+	    	
+	    	HttpHeaders responseHeaders = new HttpHeaders();
+			responseHeaders.add("Content-Type", "application/json; charset=UTF-8");
+			responseHeaders.add("Access-Control-Allow-Origin", "*");
+			responseHeaders.add("Access-Control-Allow-Headers", "origin, x-requested-with, content-type, accept");
+	
+			return responseHeaders;
+			
+	    }
     
-    
-   
-    public static int chkNull(int str) {
-        if (str == 0) {
-            return 0;
-        }
-        return str;
-    }
 }

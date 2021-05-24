@@ -1,5 +1,7 @@
 package kr.co.sosang.sosofriends.config;
 
+import javax.sql.DataSource;
+
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -12,10 +14,11 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
 
-import javax.sql.DataSource;
-
+@Configuration
 public class DBConnectConfigSosang {
-
+	
+	private ApplicationContext applicationContext;
+	
     @Bean
     @ConfigurationProperties("spring.sosang.datasource")
     public DataSource sosangDataSource(){
@@ -26,7 +29,7 @@ public class DBConnectConfigSosang {
 
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(devDataSource);
-        sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:mapper/*.xml"));
+        sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath*:/mapper/*.xml"));
 
         return sqlSessionFactoryBean.getObject();
     }
@@ -34,14 +37,18 @@ public class DBConnectConfigSosang {
     @Bean
     SqlSessionTemplate sosangSqlSessionFactory(SqlSessionFactory sosangsqlSessionFactory) throws Exception{
         return new SqlSessionTemplate(sosangsqlSessionFactory);
+
     }
 
-    @Bean
-    public PlatformTransactionManager sosangTransctionManger(DataSource dataSource){
-        DataSourceTransactionManager transactionManager = new DataSourceTransactionManager(dataSource);
-        transactionManager.setGlobalRollbackOnParticipationFailure(false);
-        return transactionManager;
-    }
+    
+    @Bean 
+	@ConfigurationProperties(prefix = "mybatis.configuration") 
+	public org.apache.ibatis.session.Configuration mybatisConfig() {
+
+		return new org.apache.ibatis.session.Configuration(); 
+		}
+
+	
 
 
 }

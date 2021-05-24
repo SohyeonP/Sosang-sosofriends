@@ -1,11 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<c:set var="contextpath" value="${pageContext.request.contextPath}"/>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/assets/js/common.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/common.js"></script>
     <link rel="stylesheet" href="/assets/css/fileupload.css">
     <title>Insert title here</title>
 </head>
@@ -27,11 +31,11 @@
                     <option value="F">프로도</option>
                     <option value="N">네오</option>
                     <option value="T">튜브</option>
-                    <option value="Ja">제이지</option>
+                    <option value="Z">제이지</option>
                     <option value="C">콘</option>
-                    <option value="Jo">죠르디</option>
+                    <option value="J">죠르디</option>
                     <option value="S">스카피</option>
-                    <option value="Ag">앙몬드</option>
+                    <option value="G">앙몬드</option>
                     <option value="P">팬다주이너</option>
                 </select>
                 <label for="cateselect" class="form-label">카테고리 종류</label>
