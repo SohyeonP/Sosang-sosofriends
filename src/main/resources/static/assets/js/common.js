@@ -8,7 +8,7 @@ common={
         
        /* $.ajax({
             type: "POST",
-            url: "../additems.do",
+            url: "../additems/register",
             dataType: "json",
             data: kakaoitems,
             success: function(data){

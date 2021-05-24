@@ -203,10 +203,9 @@
                     <a class="rightTit">왕초보운전자 필수템🚨</a>
                     <a class="rightCon">귀염뽀짝 차량용품 나가신다 길을비켜라!!</a>
                     <div class="rightLike">
-                        <a><img src"/assets/img/main/like.png">좋아요 268</a>
-                        <a><img src"/assets/img/main/comment.png">댓글 265</a>
-                        <a><img src"/assets/img/main/share.png">공유하기</a>
-                    </div>
+                        <a><img src="/assets/img/main/like.png">좋아요 268</a>
+                        <a><img src="/assets/img/main/comment.png">댓글 265</a>
+                        <a><img src="/assets/img/main/share.png">공유하기</a></div>
                     <input type="text" placeholder="댓글을 달아주세요" class="rightInput">
                     <p class="pickTit"><span>PICK!</span> 추천 상품</p>
                     <div class="pickItem">

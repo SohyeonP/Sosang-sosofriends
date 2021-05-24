@@ -34,7 +34,7 @@ public class AdminController {
 	
 	  public CommonMsg cms = new CommonMsg();
 	
-	@RequestMapping(value="/additems.do",method= {RequestMethod.GET,RequestMethod.POST})
+	@RequestMapping(value="/additems/register",method= {RequestMethod.GET,RequestMethod.POST})
 	public ResponseEntity<String> AddProduct(@RequestBody Productinfo request,@RequestPart(value="file", required = false) MultipartFile file){
 		/* 상품 아이디, 상품 코드, 상품 가격, 상품 하트 횟수,상품 판매 카운트, 상품 등록일 */
 		/* 상품명을 만들고 상품을 등록한다 */

@@ -40,12 +40,6 @@ public class DBConnectConfigSosang {
 
     }
 
-    @Bean
-    public PlatformTransactionManager sosangTransctionManger(DataSource dataSource){
-        DataSourceTransactionManager transactionManager = new DataSourceTransactionManager(dataSource);
-        transactionManager.setGlobalRollbackOnParticipationFailure(false);
-        return transactionManager;
-    }
     
     @Bean 
 	@ConfigurationProperties(prefix = "mybatis.configuration") 

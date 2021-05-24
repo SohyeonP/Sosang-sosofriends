@@ -16,6 +16,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception{
+<<<<<<< Updated upstream
         http    .authorizeRequests()
                 .antMatchers("/login").authenticated()
                 .antMatchers("/**").permitAll()
@@ -25,6 +26,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http    .formLogin().disable()
                 .anonymous().authorities("ROLE_ANONYMOUS")
                 .and().httpBasic().disable();
+=======
+		http.cors().and().csrf().disable();
+		http.authorizeRequests();
+		http.formLogin() .permitAll();
+		http.authorizeRequests().antMatchers("/login").authenticated().antMatchers("/**").permitAll();
+		http.csrf().disable().anonymous().authorities("ROLE_ANONYMOUS").and().authorizeRequests()
+				.antMatchers(HttpMethod.OPTIONS, "/**").permitAll();
+
+		http.httpBasic().disable();
+        
+>>>>>>> Stashed changes
     }
 
 
