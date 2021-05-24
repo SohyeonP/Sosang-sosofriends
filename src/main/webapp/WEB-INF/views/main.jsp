@@ -27,7 +27,7 @@
 
 <!--헤더 시작-->
 <div class="wrpDiv header_top">
-    <a class="hd_logo">
+    <a class="hd_logo" href="./">
         <img src="/assets/img/main/logo.PNG">
     </a>
     <div class="hd_login">
@@ -46,11 +46,11 @@
         <a class="cgMenu"><img src="/assets/img/main/category.png">카테고리</a>
         <div class="topMenu">
             <ul>
-                <li><a>브랜드스토리</a></li>
-                <li><a>인기상품</a></li>
-                <li><a>공지사항</a></li>
-                <li><a>이벤트</a></li>
-                <li><a>매장안내</a></li>
+               <li><a href="./story">브랜드스토리</a></li>
+               <li><a>인기상품</a></li>
+               <li><a>공지사항</a></li>
+               <li><a>이벤트</a></li>
+               <li><a href="./store">매장안내</a></li>
             </ul>
         </div>
     </div>
