@@ -13,14 +13,14 @@
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
+	<script type="text/javascript" src="/assets/js/common.js"></script>
 </head>
 <body>
 <%--aos.js 적용부분--%>
 <script type="text/javascript">
     AOS.init();
     $("#social_login").click(function (){
-
+    	 common.additems();
     });
 
 </script>
@@ -31,13 +31,18 @@
         <img src="/assets/img/main/logo.PNG">
     </a>
     <div class="hd_login">
-        <a id="social_login">로그인</a>
+        <a id="social_login" href="https://kauth.kakao.com/oauth/authorize?client_id={d7a451134c2548e9b0b111051f80c34e}&redirect_uri=http://localhost:8080/login&response_type=code"><img src="/assets/img/main/kakao_login.PNG"></img></a>
         <p>|</p>
+        
         <a>회원가입</a>
         <p>|</p>
         <a>마이페이지</a>
         <p>|</p>
         <a>장바구니</a>
+        <p>|</p>
+        <form name="logout" action="http://localhost:8080/logout">
+        	<input type="submit" value="로그아웃"/>
+        </form>
     </div>
 </div>
 
@@ -136,7 +141,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="swiper-slide">
                 <div class="con02left"  style="background-image: url(/assets/img/main/con02.png)"></div>
                 <div class="con02right">
@@ -340,7 +344,7 @@
         <div class="wrpDiv">
             <p>
                 <img src="/assets/img/main/footer.png">
-                카카오프렌즈 I 대표 : 소소프즈 I 인천광역시 부평구 부평동1234 <br>사업자등록번호 : 380-41-00272 I 고객센터 이메일 : sosofriends@naver.com <br>Copyright © SOSOFriends All rights reserved.
+                카카오프렌즈 I 대표 : 경기도 안양시 동안구 비산동 임곡로 29 <br>사업자등록번호 : 380-41-00272 I 고객센터 이메일 : sosofriends@naver.com <br>Copyright © SOSOFriends All rights reserved.
             </p>
         </div>
     </div>

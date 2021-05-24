@@ -4,8 +4,7 @@ common={
     additems :function(){
         var itemname = $("#name").val();
         var kakaoitems = $("form[name=itemform]").serialize();
-        console.log(kakaoitems);
-        
+        console.log(kakaoitems);  
        /* $.ajax({
             type: "POST",
             url: "../additems/register",
@@ -27,5 +26,8 @@ common={
 
             }
         });*/
-    }
+    },
+    login:function(){
+			
+	}
 }
