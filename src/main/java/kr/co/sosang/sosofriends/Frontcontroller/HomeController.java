@@ -10,21 +10,26 @@ public class HomeController {
 
 	@RequestMapping(value="/")
 	public String Home() {
-		return "main";
+		return "soso/main";
 	}
 	@GetMapping(value = "/additems")
 	public String AddItems(){
-		return "fileupload";
+		return "soso/fileupload";
 	}
 	
 	@RequestMapping(value="/store")
 	public String store() {
-		return "store_info";
+		return "soso/store_info";
 	}
 	
 	@RequestMapping(value="/items")
 	public String item() {
-		return "product_list";
+		return "soso/product_list";
+	}
+	
+	@RequestMapping(value="/story")
+	public String story() {
+		return "soso/brand_story";
 	}
 
 	@RequestMapping(value = "/login")
