@@ -19,11 +19,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.cors().and().csrf().disable();
         http    .authorizeRequests()
-                .antMatchers("/login").authenticated().antMatchers("/**").permitAll();
+                .antMatchers("/login").authenticated().antMatchers("/**").permitAll()
                 .antMatchers("/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/css/**", "/js/**","img/main/**").permitAll()
                 .and().authorizeRequests().antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                .and()).disable().anonymous().authorities("ROLE_ANONYMOUS").and().authorizeRequests();
+                .and().disable().anonymous().authorities("ROLE_ANONYMOUS").and().authorizeRequests();
         http   .httpBasic().disable()	
                 .anonymous().authorities("ROLE_ANONYMOUS")
                 .and().httpBasic().disable();

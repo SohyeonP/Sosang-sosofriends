@@ -32,9 +32,6 @@ public class HomeController {
 		return "brand_story";
 	}
 
-	@RequestMapping(value = "/login")
-	public String SoscialLogin(){return "login";}
-
 	@RequestMapping(value = "/test")
 	public String Test(){ return  "test";}
 
