@@ -12,7 +12,7 @@
     <script type="text/javascript" src="/assets/js/common.js"></script>
 
     <link rel="stylesheet" href="/assets/css/fileupload.css">
-    <title>Insert title here</title>
+    <title>관리자페이지1</title>
 </head>
 <body>
     <H2>제품 업로드 페이지</H2>

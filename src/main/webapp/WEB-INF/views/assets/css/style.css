@@ -248,3 +248,8 @@ a {color:#000;text-decoration:none; cursor: pointer}
 .footer .ft02 img{display: block; margin-bottom: 30px;}
 .footer .ft02 p{font-size: 14px; color: #fff; line-height: 30px;}
 
+
+/* 공지사항 */
+.notice{width:500px;height:100px}
+
+/* 공지사항 끝 */

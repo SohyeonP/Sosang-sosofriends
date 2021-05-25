@@ -34,5 +34,10 @@ public class HomeController {
 
 	@RequestMapping(value = "/test")
 	public String Test(){ return  "test";}
+	
+	@RequestMapping(value="/notice")
+	public String Notice() {
+		return "/soso/notice";
+	}
 
 }
