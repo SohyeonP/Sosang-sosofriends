@@ -1,7 +1,9 @@
 package kr.co.sosang.sosofriends.login.controller;
 
+import java.io.IOException;
 import java.util.HashMap;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,35 +16,58 @@ public class LoginController {
 	
 	private KakaoAPI kakaoapi = new KakaoAPI();
 	
+	@RequestMapping(value="/kakaologin")
+	    public void kakaologin(HttpServletResponse response) throws IOException {
+
+	        String url = "https://kauth.kakao.com/oauth/authorize?";
+	        url += ("client_id=" + "d7a451134c2548e9b0b111051f80c34e");
+	        url += ("&redirect_uri=http://localhost:8080/login");
+	        url += ("&response_type=code");
+	        
+	        response.sendRedirect(url);
+	    }
+	
 	@RequestMapping(value="/login")
-	public ModelAndView login(@RequestParam("code") String code,HttpSession session) {
-		
-		ModelAndView mav = new ModelAndView();
-		
-		String access_token = kakaoapi.getAccessToken(code);
-		
-		HashMap<String ,Object> userInfo = kakaoapi.getUserInfo(access_token);
-		
-		System.out.println("login info"+userInfo.toString());
-		
-		if(userInfo.get("email")!=null) {
-			session.setAttribute("userid",userInfo.get("email"));
-			session.setAttribute("access_token",access_token);
+	public void login(@RequestParam("code") String code,HttpSession session, HttpServletResponse response) {
+
+		try {
+			String access_token = kakaoapi.getAccessToken(code);
+			
+			HashMap<String ,Object> userInfo = kakaoapi.getUserInfo(access_token);
+			
+			System.out.println("login info"+userInfo.toString());
+			
+			if(userInfo.get("email")!=null) {
+				session.setAttribute("userid",userInfo.get("email"));
+				session.setAttribute("access_token",access_token);
+			}
+
+			response.sendRedirect("/");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		mav.addObject("userId",userInfo.get("email"));
-		mav.setViewName("soso/main");
-		return mav;
+	}
+	
+	@RequestMapping(value="/kakaologout")
+	public void kakaologout(HttpSession session, HttpServletResponse response) throws IOException {
+		
+		String url = "https://kauth.kakao.com/oauth/logout?";
+        url += ("client_id=" + "d7a451134c2548e9b0b111051f80c34e");
+        url += ("&logout_redirect_uri=http://localhost:8080/logout");
+		
+		session.removeAttribute("access_token");
+		session.removeAttribute("userid");
+		
+		response.sendRedirect(url);
 	}
 	
 	@RequestMapping(value="/logout")
-	public ModelAndView logout(HttpSession session) {
+	public void logout(HttpSession session, HttpServletResponse response) throws IOException {
 		
-		ModelAndView mav = new ModelAndView();
-		
-		kakaoapi.kakaoLogout(session.getAttribute("access_token"));
 		session.removeAttribute("access_token");
 		session.removeAttribute("userid");
-		mav.setViewName("soso/main");
-		return mav;
+		
+		response.sendRedirect("/");
 	}
 }
