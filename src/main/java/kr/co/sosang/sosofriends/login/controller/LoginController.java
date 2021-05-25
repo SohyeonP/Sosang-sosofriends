@@ -30,7 +30,7 @@ public class LoginController {
 			session.setAttribute("access_token",access_token);
 		}
 		mav.addObject("userId",userInfo.get("email"));
-		mav.setViewName("main");
+		mav.setViewName("soso/main");
 		return mav;
 	}
 	
@@ -41,8 +41,8 @@ public class LoginController {
 		
 		kakaoapi.kakaoLogout(session.getAttribute("access_token"));
 		session.removeAttribute("access_token");
-		session.removeAttribute("userId");
-		mav.setViewName("main");
+		session.removeAttribute("userid");
+		mav.setViewName("soso/main");
 		return mav;
 	}
 }
