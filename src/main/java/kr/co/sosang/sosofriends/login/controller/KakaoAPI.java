@@ -62,7 +62,7 @@ public class KakaoAPI {
 			}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return null;
+		return accessToken;
 	}
 
 	
@@ -75,7 +75,7 @@ public class KakaoAPI {
 				URL url = new URL(reqUrl);
 				HttpURLConnection conn = (HttpURLConnection)url.openConnection();
 				conn.setRequestMethod("POST");
-				conn.setRequestProperty("Authorization", "Bearer"+access_token);
+				conn.setRequestProperty("Authorization", "Bearer "+access_token);
 				int responseCode = conn.getResponseCode();
 				
 				System.out.println("responseCode"+responseCode);
@@ -100,7 +100,7 @@ public class KakaoAPI {
 				JsonObject kakaoAccount = element.getAsJsonObject().get("kakao_account").getAsJsonObject();
 				
 				String nickname = properties.getAsJsonObject().get("nickname").getAsString();
-				String mail = properties.getAsJsonObject().get("email").getAsString();
+				String mail = kakaoAccount.getAsJsonObject().get("email").getAsString();
 				
 				userInfo.put("nickname",nickname);
 				userInfo.put("email",mail);
@@ -114,13 +114,13 @@ public class KakaoAPI {
 
 
 	public void kakaoLogout(Object accessToken) {
-		String reqURL = "https://kapi.kakao.com/v1/user/logut";
+		String reqURL = "https://kapi.kakao.com/v1/user/logout";
 		try {
 			URL url = new URL(reqURL);
 			HttpURLConnection conn = (HttpURLConnection)url.openConnection();
 			conn.setRequestMethod("POST");
-			conn.setRequestProperty("Authorization", "Bearer"+accessToken);
-			
+			conn.setRequestProperty("Authorization", "Bearer "+accessToken);
+
 			int responseCode = conn.getResponseCode();
 			
 			System.out.println("responseCode"+responseCode);
