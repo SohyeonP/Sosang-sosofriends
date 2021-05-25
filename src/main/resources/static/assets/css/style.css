@@ -55,10 +55,20 @@ a {color:#000;text-decoration:none; cursor: pointer}
 .mainCon01>p:first-child{font-size: 30px; font-weight: bold; text-align: center;}
 .mainCon01>p:last-child{font-size: 14px; line-height: 20px; text-align: center; margin-top: 5px}
 
-.mainCon02{margin-top: 60px}
+.mainCon02{width:100% !important; margin:60px 0;}
 .mainCon02 .con02left{position: relative;width: 640px; height: 426px; margin-right: 40px; border-radius: 20px; float: left; background-size: cover; background-repeat: no-repeat; background-position: center}
 
-.mainCon02 .con02right{width: calc(100% - 680px); float: left}
+/* 슬라이드 */
+.swiper-container{overflow: visible !important;}
+.swiper-container .swiper-slide{width:1280px;}
+.swiper-container .swiper-slide-next, .swiper-slide-prev{transform: translate3d(0px, 0px, -100px) rotateX(0deg) rotateY(0deg) scale(0.8) !important;}
+.swiper-container .swiper-slide-active{transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) scale(1) !important;}
+.swiper-container .slidePage{margin-top: 20px; display: inline-block; width: 60px;}
+.swiper-container .slidePageBtn{margin-top: 15px; display: inline-block;}
+.swiper-container .slidePageBtn button{width: 26px; height: 26px; background-color: #ffffff; border: 1px solid #999999; cursor: pointer; text-align: center; padding: 4px;}
+.swiper-container .slidePageBtn button:focus{outline: none;}
+
+.mainCon02 .con02right{width: 600px; float: left; margin-top: 30px;}
 .mainCon02 .con02right .profile{width: 100%;}
 .mainCon02 .con02right .profile div{width: 40px; height: 40px; border-radius: 20px; background-size: cover; background-repeat: no-repeat; background-position: center;; float: left; margin-right: 10px}
 .mainCon02 .con02right .profile .profileTxt{font-size: 14px; color: #BBBBBB}
@@ -71,11 +81,11 @@ a {color:#000;text-decoration:none; cursor: pointer}
 .mainCon02 .con02right .rightLike>a:nth-child(1) img{position: relative; top: -1px;}
 .mainCon02 .con02right .rightLike>a:nth-child(2) img{position: relative; top: -2px;}
 .mainCon02 .con02right .rightLike>a:nth-child(3) img{position: relative; top: -2px;}
-.mainCon02 .con02right .rightInput{width: 100%; background-color: #EEEEEE; border: none; border-radius: 0 27px 27px 27px; font-size: 14px; color: #111; padding: 14px 36px; margin-top: 15px;}
+.mainCon02 .con02right .rightInput{width: 524px; background-color: #EEEEEE; border: none; border-radius: 0 27px 27px 27px; font-size: 14px; color: #111; padding: 14px 36px; margin-top: 15px;}
 .mainCon02 .con02right .rightInput::placeholder{font-size: 14px; color: #999999}
 .mainCon02 .con02right .pickTit{font-size: 16px; margin-top: 28px;}
 .mainCon02 .con02right .pickTit span{font-size: 16px; font-weight: bold; color: #FF4723;}
-.mainCon02 .con02right .pickItem{position: relative; width: 100%; border: 1px solid #F1F1F1; border-radius: 20px; padding: 12px 24px; margin-top: 9px; float: left}
+.mainCon02 .con02right .pickItem{position: relative; width: 550px; border: 1px solid #F1F1F1; border-radius: 20px; padding: 12px 24px; margin-top: 9px; float: left}
 .mainCon02 .con02right .pickItem .pickImg{width: 96px; height: 96px; background-size: cover; background-repeat: no-repeat; background-position: center; float: left; margin-right: 14px;}
 .mainCon02 .con02right .pickItemCon{width: 100%; float: left}
 .mainCon02 .con02right .pickItemCon p{position: relative; top: 10px; line-height: 35px; font-size: 14px; color: #999999; float: left;}
