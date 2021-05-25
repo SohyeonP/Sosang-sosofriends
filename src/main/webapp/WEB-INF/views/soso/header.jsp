@@ -14,12 +14,12 @@
         <a>장바구니</a>
         <p>|</p>
         <c:if test="${sessionScope.userid eq null}">
-        	<a id="social_login" href="https://kauth.kakao.com/oauth/authorize?client_id=d7a451134c2548e9b0b111051f80c34e&redirect_uri=http://localhost:8080/login&response_type=code">
+        	<a id="social_login" href="./kakaologin">
         		<img src="/assets/img/main/kakao_login.PNG" style="margin-top:-8px;"/>
         	</a>
         </c:if>
         <c:if test="${sessionScope.userid ne null }">
-        	<a href="./logout">로그아웃</a>
+        	<a href="./kakaologout">로그아웃</a>
        </c:if>
     </div>
 </div>
