@@ -39,5 +39,10 @@ public class HomeController {
 	public String Notice() {
 		return "/soso/notice";
 	}
+	
+	@RequestMapping(value="/sosologin")
+	public String login() {
+		return "/soso/login";
+	}
 
 }
