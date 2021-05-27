@@ -1,34 +1,53 @@
 package kr.co.sosang.sosofriends.admin.domain;
 
-public class Productinfo {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-	private String p_price;
-	private String character_code;
-	private String cate_code;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@NoArgsConstructor
+@Entity
+@Table(name="kfs_product_info")
+public class Productinfo {
 	
-	private String p_name;
-	public String getP_name() {
-		return p_name;
-	}
-	public void setP_name(String p_name) {
-		this.p_name = p_name;
-	}
-	public String getP_price() {
-		return p_price;
-	}
-	public void setP_price(String p_price) {
-		this.p_price = p_price;
-	}
-	public String getCharacter_code() {
-		return character_code;
-	}
-	public void setCharacter_code(String character_code) {
-		this.character_code = character_code;
-	}
-	public String getCate_code() {
-		return cate_code;
-	}
-	public void setCate_code(String cate_code) {
-		this.cate_code = cate_code;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long kpi_idx;
+	
+	@Column(length = 100, nullable = false)
+	private String kpi_code;
+	
+	@Column(length = 100, nullable = false)
+	private String kpi_price;
+	
+	@Column(length = 100, nullable = true)
+	private String kpi_hit;
+	
+	@Column(length = 100, nullable = false)
+	private String reg_date;	
+	
+	@Column(length = 100, nullable = false)
+	private String kpi_cate_k;
+	
+	@Column(length = 100, nullable = false)
+	private String kpi_name;
+	
+	
+	
+	@Builder
+	public Productinfo(String kpi_code,String kpi_price,String kpi_hit,String reg_date,String kpi_cate_k,String kpi_name) {
+		this.kpi_code = kpi_code;
+		this.kpi_hit = kpi_hit;
+		this.kpi_price = kpi_price;
+		this.reg_date = reg_date;
+		this.kpi_cate_k = kpi_cate_k;
+		this.kpi_name = kpi_name;
 	}
 }

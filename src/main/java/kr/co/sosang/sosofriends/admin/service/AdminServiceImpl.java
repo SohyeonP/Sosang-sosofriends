@@ -8,31 +8,37 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import kr.co.sosang.sosofriends.admin.dao.AdminDAO;
-import kr.co.sosang.sosofriends.admin.domain.Productinfo;
+import kr.co.sosang.sosofriends.admin.domain.ProductinfoRepository;
+import kr.co.sosang.sosofriends.admin.dto.ProductDTO;
 import kr.co.sosang.sosofriends.utils.Utils;
 
 @Service("adminservice")
 public class AdminServiceImpl implements AdminService{
 
-    @Resource(name="admindao")
-    private AdminDAO admindao;
+	/*@Resource(name="admindao")
+	private AdminDAO admindao;
+	*/
     
+    private ProductinfoRepository proRepository;
     
-    public int registerItems(Productinfo request, Map<String, Object> i_name)throws Exception{
+    public int registerItems(ProductDTO prodto, Map<String, Object> i_name)throws Exception{
     	
     	Map<String,Object> param = new HashMap();
     	String lastnum = "0";// 기본값 0 최근값은 가져와야함
-		String c_code= Utils.chkNull(request.getCate_code());
-		String k_code =Utils.chkNull(request.getCharacter_code());
+    	
+    	System.out.println("");
+    	
+		/*String c_code= Utils.chkNull(request.
+		String k_code =Utils.chkNull(request.getCharacter_code());*/
 		
     
 		String productnum ="";
 		try {
-			param.put("name", Utils.chkNull(request.getP_name()));
-			param.put("price",Utils.chkNull(request.getP_price()));
+			/*param.put("name", Utils.chkNull(request.getP_name()));
+			param.put("price",Utils.chkNull(request.getP_price()));*/
 			
 			
-			String num = Integer.toString(admindao.getlastNum(c_code)+1);
+			/*String num = Integer.toString(admindao.getlastNum(c_code)+1);
 			
 			productnum += String.format(c_code,Utils.stringNumberToZeroStringNumber(num, 4));
 			productnum += k_code;
@@ -40,13 +46,13 @@ public class AdminServiceImpl implements AdminService{
 			// 캐릭터 코드 +  최근 
 			param.put("pdtnum", productnum);
 			param.put("code", c_code);
-			param.put("img", i_name.get("saveFileName"));
+			param.put("img", i_name.get("saveFileName"));*/
 			
-			int resultset = admindao.addItems(param);
-			
+			/*int resultset = admindao.addItems(param);*/
+			/*
 			if(resultset != 0) {
 				return resultset;
-			}
+			}*/
 		
 		}catch(Exception e) {
 			e.printStackTrace();
