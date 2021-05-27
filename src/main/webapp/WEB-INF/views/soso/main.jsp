@@ -254,7 +254,7 @@
         <div class="leftDiv" data-aos="fade-right" data-aos-offset="200" data-aos-duration="2500">
             <p class="conTopTxt">누구에게나 사랑받는, <br>국민 캐릭터 카카오프렌즈</p>
             <p class="conBtmTxt">저마다의 개성과 매력을 지닌 라이언, 무지, 어피치, 프로도, 네오, 튜브, 콘, 제이지. <br>카카오프렌즈의 위트넘치는 표정과 행동은 폭넓은 공감과 유쾌한 웃음을 선사합니다.</p>
-            <a class="veiwMore">자세히 보기<img src="/assets/img/main/arrow.png"></a>
+            <a class="veiwMore" href="./story">자세히 보기<img src="/assets/img/main/arrow.png"></a>
         </div>
         <div class="rightDiv" data-aos="fade-left" data-aos-offset="200" data-aos-duration="2500">
             <div class="rightDivImg" style="background-image: url(/assets/img/main/con04.png)"></div>
