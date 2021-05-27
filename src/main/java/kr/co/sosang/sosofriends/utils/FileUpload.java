@@ -13,9 +13,10 @@ public class FileUpload {
     private String fileurl;
 
     public Map<String,Object> setFileUpload(MultipartFile multipartfile) {
-
-        filesavepath = "C:\\project\\sosofriends\\src\\main\\webapp\\WEB-INF\\images";
-        fileurl = "http://localhost:8080/sosofriends/items";
+    	
+    	
+		/* filesavepath = "C:\\project\\sosofriends\\src\\main\\webapp\\WEB-INF\\itemimages";*/
+		/* fileurl = "http://localhost:8080/sosofriends/items";*/
 
 
         Map<String,Object> param = new HashMap();
