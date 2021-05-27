@@ -27,38 +27,38 @@ public class NaverAPI {
 			reqURL += ("&client_secret=" + "CP9NVJbtDd");
 			reqURL += ("&redirect_uri=" + URLEncoder.encode("http://localhost:8080/login","UTF-8"));
 			reqURL += ("&code=" + code);
-			reqURL += ("&state=" + new SecureRandom());
-			try {
-			      URL url = new URL(reqURL);
-			      
-			      HttpURLConnection con = (HttpURLConnection)url.openConnection();
-			      con.setRequestMethod("GET");
-			      int responseCode = con.getResponseCode();
-			      
-			      System.out.println("responseCode="+responseCode);
-			      
-			      
-			      BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
-			      String line = "";
-			      String result = "";
-			      
-			      while ((line = br.readLine()) != null) {
-			        result += line;
-			      }
-			      
-			      JsonParser parser = new JsonParser();
-					
-				  JsonElement  element = parser.parse(result);
+			reqURL += ("&state=" + state);
+		try {
+		      URL url = new URL(reqURL);
+		      
+		      HttpURLConnection con = (HttpURLConnection)url.openConnection();
+		      con.setRequestMethod("GET");
+		      int responseCode = con.getResponseCode();
+		      
+		      System.out.println("responseCode="+responseCode);
+		      
+		      
+		      BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+		      String line = "";
+		      String result = "";
+		      
+		      while ((line = br.readLine()) != null) {
+		        result += line;
+		      }
+		      
+		      JsonParser parser = new JsonParser();
 				
-				  accessToken = element.getAsJsonObject().get("access_token").getAsString();
-				  refreshToken = element.getAsJsonObject().get("refresh_token").getAsString();
+			  JsonElement  element = parser.parse(result);
+			
+			  accessToken = element.getAsJsonObject().get("access_token").getAsString();
+			  refreshToken = element.getAsJsonObject().get("refresh_token").getAsString();
+			
 				
-					
-			      br.close();
-			      
-			    } catch (Exception e) {
-			      System.out.println(e);
-			    }
+		      br.close();
+		      
+	    } catch (Exception e) {
+	      System.out.println(e);
+	    }
 		return accessToken;
 	}
 

@@ -1,6 +1,7 @@
 package kr.co.sosang.sosofriends.login.controller;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -20,6 +21,9 @@ public class LoginController {
 	
 	private KakaoAPI kakaoapi = new KakaoAPI();
 	private NaverAPI naverapi = new NaverAPI();
+	private GoogleAPI googleapi = new GoogleAPI();
+	
+	
 	
 	@RequestMapping(value="/kakaologin")
 	    public void kakaologin(HttpSession session, HttpServletResponse response) throws IOException {
@@ -32,7 +36,7 @@ public class LoginController {
 	        url += ("&response_type=code");
 	        url += ("&state=" + state);
 	        
-	        session.setAttribute("lo_info", "k");
+	        session.setAttribute("l_info", "k");
 	        
 	        response.sendRedirect(url);
 	    }
@@ -48,28 +52,50 @@ public class LoginController {
 		url += ("&state=" + state);
 		
 		session.setAttribute("state", state);
-		session.setAttribute("lo_info", "n");
+		session.setAttribute("l_info", "n");
+		
+		response.sendRedirect(url);
+	}
+	
+	
+	
+	@RequestMapping(value="/googlelogin")
+		public void googleloing(HttpSession session, HttpServletResponse response) throws IOException {
+		SecureRandom state = new SecureRandom();
+		
+		String url = "https://accounts.google.com/o/oauth2/v2/auth?scope=profile%20email&response_type=code";
+		url += ("&access_type=" + "offline");
+		url += ("&client_id=" + "166917974905-hpbuk02e74hrvbpbjo5afk059s4ip4of.apps.googleusercontent.com");
+		url += ("&redirect_uri=" + URLEncoder.encode("http://localhost:8080/login","UTF-8"));
+		url += ("&state=" + state);
+		
+		session.setAttribute("l_info", "g");
 		
 		response.sendRedirect(url);
 	}
 	
 	@RequestMapping(value="/login")
 	public void login(@RequestParam("code") String code, @RequestParam("state") String state, HttpSession session, HttpServletResponse response) {
-			String lo_info = (String) session.getAttribute("lo_info");
+			String l_code = (String) session.getAttribute("l_info");
 			
 			String access_token = "";
 			HashMap<String ,Object> userInfo = new HashMap<>();
 			
 		 try {
 			 
-			 if(lo_info == "k") {
+			 if(l_code == "k") {
 				access_token = kakaoapi.getAccessToken(code);
 				userInfo = kakaoapi.getUserInfo(access_token);
 			 }
 			 
-			 if(lo_info == "n") {
+			 if(l_code == "n") {
 				 access_token = naverapi.getAccessToken(code, state);
 				 userInfo = naverapi.getUserInfo(access_token);
+			 }
+			 
+			 if(l_code == "g") {
+				 access_token = googleapi.getAccessToken(code);
+				 userInfo = googleapi.getUserInfo(access_token);
 			 }
 			
 			
@@ -78,7 +104,7 @@ public class LoginController {
 			if(userInfo.get("email")!=null) {
 				session.setAttribute("userid",userInfo.get("email"));
 				session.setAttribute("access_token",access_token);
-				session.setAttribute("lo_info", lo_info);
+				session.setAttribute("l_code", l_code);
 			}
 
 			response.sendRedirect("/sosologin");
@@ -115,13 +141,26 @@ public class LoginController {
 		response.sendRedirect("/logout");
 	}
 	
+	@RequestMapping(value="/googlelogout")
+	public void googlelogout(HttpSession session, HttpServletResponse response) throws IOException {
+		
+		String url = "https://oauth2.googleapis.com/revoke?";
+        url += ("token=" + session.getAttribute("access_token"));
+        
+        URL url1 = new URL(url);
+        HttpURLConnection con = (HttpURLConnection)url1.openConnection();
+		response.sendRedirect("/logout");
+	}
+	
 	
 	@RequestMapping(value="/logout")
 	public void logout(HttpSession session, HttpServletResponse response) throws IOException {
 		
 		session.removeAttribute("access_token");
 		session.removeAttribute("userid");
-		session.removeAttribute("lo_info");
+		session.removeAttribute("l_code");
+		session.removeAttribute("l_info");
+		session.removeAttribute("state");
 		
 		response.sendRedirect("/");
 	}

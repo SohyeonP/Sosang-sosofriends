@@ -17,11 +17,15 @@
         	<a onclick="loginpop();">로그인</a>
         </c:if>
         <c:if test="${sessionScope.userid ne null }">
-        	<c:if test="${sessionScope.lo_info eq 'k' }">
+        	<c:if test="${sessionScope.l_code eq 'k' }">
         		<a href="./kakaologout">로그아웃</a>
         	</c:if>
-        	<c:if test="${sessionScope.lo_info eq 'n' }">
+        	<c:if test="${sessionScope.l_code eq 'n' }">
         		<a href="./naverlogout">로그아웃</a>
+        	</c:if>
+        	
+        	<c:if test="${sessionScope.l_code eq 'g' }">
+        		<a href="./googlelogout">로그아웃</a>
         	</c:if>
        </c:if>
     </div>
@@ -43,6 +47,9 @@
 </div>
 
 <script type="text/javascript">
+var code = '${sessionScope.l_code}';
+
+console.log(code)
 	function loginpop(){
 		var left = ($(window).width() / 2) - 200;
 		var top  = ($(window).height() / 2) - 300;
