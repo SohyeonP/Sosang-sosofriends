@@ -199,8 +199,11 @@ a {color:#000;text-decoration:none; cursor: pointer}
 .detailTab p.on{border: 1px solid #707070; color: #111111}
 
 .detailTabCon01{width: 100%; text-align: center;}
-.detailTabCon02{display: none; text-align: center}
-.detailTabCon02 p{float: left; width: 100%; font-size: 30px; margin-top: 100px;}
+.detailTabCon02{display: none; float: left; padding-top: 30px;}
+.detailTabCon02 p{position: relative; padding-left: 10px; color: #999999; font-family: 'Noto Sans',sans-serif; font-size: 16px; line-height: 30px;}
+.detailTabCon02 p:before{content: '·'; position: absolute; top: -3px; left: 0px;}
+.detailTabCon02 .title{margin: 20px 0; padding-left: 0px; color: #111111; font-family: 'Noto Sans',sans-serif; font-size: 20px; font-weight: bold;}
+.detailTabCon02 .title:before{content: '';}
 .detailTabCon03{display: none; text-align: center}
 .detailTabCon03 p{float: left; width: 100%; font-size: 30px; margin-top: 100px;}
 
@@ -253,3 +256,86 @@ a {color:#000;text-decoration:none; cursor: pointer}
 .notice{width:500px;height:100px}
 
 /* 공지사항 끝 */
+
+.sub_title{padding: 123px 0 80px; font-family: 'Noto Snas', sans-serif; font-size: 30px; font-weight: bold; text-align: center;}
+
+
+/* 인기상품 시작 */
+
+.hot_item_list01{position: relative; width: 100%;}
+.hot_item_list01 a{position: relative; background-size: cover; background-repeat: no-repeat; background-position: center;}
+.hot_item_list01 a:nth-child(1){position: relative; float: left; width: 634px; height: 630px; margin-right: 10px;}
+.hot_item_list01 a:nth-child(2n){margin-right: 10px;}
+.hot_item_list01 a:nth-child(n+2){position: relative; float: left; width: 312px; height: 310px; margin-bottom: 10px;}
+.hot_item_list01 a img{position: absolute; right: 15px; bottom: 15px;}
+
+.hot_item_list02{position: relative; width: 100%;}
+.hot_item_list02 a{position: relative; background-size: cover; background-repeat: no-repeat; background-position: center;}
+.hot_item_list02 a:nth-child(n){position: relative; float: left; width: 312px; height: 310px; margin: 0 10px 10px 0;}
+.hot_item_list02 a:last-child{margin-right: 0px;}
+.hot_item_list02 a img{position: absolute; right: 15px; bottom: 15px;}
+
+.hot_item_list03{position: relative; width: 100%;}
+.hot_item_list03 a{position: relative; background-size: cover; background-repeat: no-repeat; background-position: center;}
+.hot_item_list03>div{width: 634px; height: 630px; float: left; margin:0 10px 10px 0;}
+.hot_item_list03>div a:nth-child(2n-1){margin-right: 10px;}
+.hot_item_list03>div a:nth-child(n){position: relative; float: left; width: 312px; height: 310px; margin-bottom: 10px;}
+.hot_item_list03>a:last-child{position: relative; float: left; width: 634px; height: 630px; margin-bottom: 10px}
+.hot_item_list03 a img{position: absolute; right: 15px; bottom: 15px;}
+
+/* 인기상품 끝 */
+
+/* 마이페이지 사이드메뉴 시작 */
+
+.my_side_menu{position: relative; float: left; margin-top: 20px; width: 220px; margin-right: 50px;}
+.my_side_menu ul{position: relative; width: 100%;}
+.my_side_menu ul li{position: relative; width: 100%;}
+.my_side_menu ul li a{display: block; position: relative; width: 100%; font-size: 16px; color: #BBBBBB; line-height: 57px; text-align: center; border: 1px solid #BBBBBB; border-bottom: none;}
+.my_side_menu ul li:last-child a{border-bottom: 1px solid #bbbbbb;}
+.my_side_menu ul li.on a{color: #FF8C43; border: 1px solid #FF8C43;}
+
+/* 마이페이지 사이드메뉴 끝 */
+
+
+/* 최근 본 상품 시작 */
+
+.all_choice{margin-bottom: 20px;}
+.check_box{position: relative;}
+.check_box input[type="checkbox"]{display: none;}
+.check_box input[type="checkbox"] + label{position: relative;}
+.check_box input[type="checkbox"] + label img{position: absolute; }
+.check_box input[type="checkbox"] + label .on{display: none;}
+.check_box input[type="checkbox"]:checked + label .off{display: none;}
+.check_box input[type="checkbox"]:checked + label .on{display: block;}
+.check_box input[type="checkbox"] + label p{font-size: 16px; font-weight: 500; margin-left: 42px; line-height: 30px;}
+
+.check_list{position: relative; float: left; width: calc(100% - 270px); margin-top: 20px;}
+.check_list .check_area{position: relative; width: 100%; border-top: 1px solid #707070; border-bottom: 1px solid #707070}
+.check_list .check_area .contents{display: flex; position: relative; width: 100%; margin: 40px 0 43px;}
+.check_list .check_area .contents .img{position: relative; margin-right: 22px; width: 166px; height: 166px; background-size: cover; background-repeat: no-repeat; background-position: center; border: 1px solid #eee}
+.check_list .check_area .contents p{font-size: 16px; font-weight: bold; line-height: 32px;}
+.check_list .check_area .contents .btn_area{position: absolute; top: 0; right: 0; width: 180px;}
+.check_list .check_area .contents .btn_area .btn{display: block; position: relative; margin-bottom: 12px; width: 100%; font-size: 16px; color: #5f5f5f; line-height: 48px; text-align: center; border: 1px solid #bbb;}
+.check_list .check_area .contents .btn_area .btn.on:nth-child(1){color: #fff; border: 1px solid #FF8C43; background-color: #FF8C43}
+.check_list .check_area .contents .btn_area .btn.on:nth-child(2){color: #fff; border: 1px solid #484848; background-color: #484848}
+.check_list .check_area .contents .check_box{width: 49px; padding-top: 20px;}
+
+.check_list .bottom_btn{display: block; position: relative; float: right; margin-top: 40px; width: 220px; color: #FF8C43; font-size: 16px; line-height: 56px; text-align: center; border: 1px solid #FF8C43;}
+
+.check_list_none{text-align: center;}
+.check_list_none p{color: #5F5F5F; font-size: 16px; line-height: 22px; margin-top: 26px;}
+
+/* 최근 본 상품 끝 */
+
+/* 내 활동 팝업 시작 */
+
+.my_activity{width: 700px;}
+.popup{position: fixed; z-index: 9; top: 0; left: 0; width: 100%; height: 100vh;}
+.popup .bg{position: relative; width: 100%; height: 100%; background-color:  rgba(0,0,0,0.6)}
+.popup .popup_area{position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 80px 40px; border-radius: 20px; background-color: #fff;}
+.popup .popup_area .close{position: absolute; top: 40px; right: 40px; background-color: #fff; border: none;}
+.popup .popup_area .contents{position: relative; width: 100%; text-align: center;}
+.popup .popup_area .contents p:nth-child(2){margin: 20px 0 10px; font-size: 22px; font-weight: bold;}
+.popup .popup_area .contents p:nth-child(3){margin-bottom: 40px; color: #5F5F5F; font-size: 22px;}
+
+/* 내 활동 팝업 끝 */

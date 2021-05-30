@@ -50,3 +50,31 @@ $(document).ready(function() {
         $('.detailTabCon02').css('display', 'none');
     });
 });
+
+$(document).ready(function() {
+    $('.my_side_menu ul li.on').next().children().css('border-top','none');
+});
+
+$(document).ready(function() {
+    
+    
+    // 체크박스 전체 선택
+    /*function checkAll(){
+        if(document.getElementById('check01').checked == true){
+            for(var i=0; i<5; i++) document.getElementsByName('checkbox')[i].checked=true;
+        };
+        if(document.getElementById("check01").checked == false){
+            for(var i=0; i<5; i++) document.getElementsByName("checkbox")[i].checked=false;
+        };
+    };
+    $('#check01').click(function(){
+        checkAll();
+    });*/
+});
+
+$(document).ready(function() {
+    $('.popup .popup_area .close').click(function(){
+        $('.popup').css('display', 'none');
+    });
+});
+
