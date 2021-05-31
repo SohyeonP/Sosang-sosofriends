@@ -11,7 +11,7 @@
         <p>|</p>
         <a>마이페이지</a>
         <p>|</p>
-        <a>장바구니</a>
+        <a href="./shopping">장바구니</a>
         <p>|</p>
         <c:if test="${sessionScope.userid eq null}">
         	<a onclick="loginpop();">로그인</a>
@@ -37,7 +37,7 @@
         <div class="topMenu">
             <ul>
                <li><a href="./story">브랜드스토리</a></li>
-               <li><a>인기상품</a></li>
+               <li><a href="./hotitem">인기상품</a></li>
                <li><a href="./notice">공지사항</a></li>
                <li><a>이벤트</a></li>
                <li><a href="./store">매장안내</a></li>
