@@ -23,8 +23,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/css/**", "/js/**","img/main/**").permitAll()
                 .and().authorizeRequests().antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                .and().disable().anonymous().authorities("ROLE_ANONYMOUS").and().authorizeRequests();
-        http   .httpBasic().disable()	
+                .and().anonymous().authorities("ROLE_ANONYMOUS").and().authorizeRequests();
+        http   .httpBasic().disable()
                 .anonymous().authorities("ROLE_ANONYMOUS")
                 .and().httpBasic().disable();
     }
