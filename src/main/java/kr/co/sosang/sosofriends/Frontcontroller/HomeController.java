@@ -44,5 +44,26 @@ public class HomeController {
 	public String login() {
 		return "/soso/login";
 	}
+	
+	@RequestMapping(value="/myactivity")
+	public String myactivity() {
+		return "/soso/my_activity";
+	}
+	
+	@RequestMapping(value="/shopping")
+	public String shopping() {
+		return "/soso/my_shopping_none";
+	}
+	
+	@RequestMapping(value="/recentlist")
+	public String recentlist() {
+		return "/soso/my_view_none";
+	}
+	
+	@RequestMapping(value="/hotitem")
+	public String hotitem() {
+		return "/soso/hot_item";
+	}
+
 
 }
