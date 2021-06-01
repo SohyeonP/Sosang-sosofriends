@@ -27,5 +27,10 @@
 			 #{img}
 			 </if>
 			)
-     	</insert>  
+     	</insert> 
+     	<select id="selectUserList">
+     		select *
+			from public.kfs_notice kn 
+			order by id desc
+     	</select> 
 </mapper>
