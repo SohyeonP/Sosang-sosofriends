@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sosang.mapper.shopmapper">
+	<insert id = "addItems" parameterType="Map">
+	</insert>
+	<select id="selectUserList" resultType="Map">
+	     	SELECT *
+				FROM public.kfs_notice kn 
+				ORDER BY id desc
+     	</select> 
+</mapper>
