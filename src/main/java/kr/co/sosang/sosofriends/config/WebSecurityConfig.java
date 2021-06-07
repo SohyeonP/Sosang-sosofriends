@@ -14,20 +14,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception{
-
-        http.cors().and().csrf().disable();
-        http    .authorizeRequests()
-                .antMatchers("/login").authenticated().antMatchers("/**").permitAll()
-                .antMatchers("/**").permitAll()
-                .antMatchers(HttpMethod.GET, "/css/**", "/js/**","img/main/**").permitAll()
-                .and().authorizeRequests().antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                .and().anonymous().authorities("ROLE_ANONYMOUS").and().authorizeRequests();
-        http   .httpBasic().disable()
-                .anonymous().authorities("ROLE_ANONYMOUS")
-                .and().httpBasic().disable();
-    }
+	 @Override
+	protected void configure(HttpSecurity http) throws Exception{
+	
+	    http.cors().and().csrf().disable();
+	    http    .authorizeRequests()
+	            .antMatchers("/login").authenticated().antMatchers("/**").permitAll()
+	            .antMatchers("/**").permitAll()
+	            .antMatchers(HttpMethod.GET, "/css/**", "/js/**","img/main/**").permitAll()
+	            .and().authorizeRequests().antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+	            .and().anonymous().authorities("ROLE_ANONYMOUS").and().authorizeRequests();
+	    http   .httpBasic().disable()	
+	            .anonymous().authorities("ROLE_ANONYMOUS")
+	            .and().httpBasic().disable();
+	}
 
 
 
