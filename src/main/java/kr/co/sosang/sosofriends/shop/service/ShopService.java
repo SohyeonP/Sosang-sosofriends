@@ -12,6 +12,7 @@ public interface ShopService {
 	public int Addbags(Map<String, Object> paramMap)throws Exception;
 
 	public int Updatebags(Map<String, Object> paramMap)throws Exception;
-
+	
+	public int RegisterOrder(Map<String,Object> paramMap)throws Exception;
 
 }

@@ -33,6 +33,9 @@ public class ShopDAOImpl implements ShopDAO {
 		return devSession.update(namespace+"Updatebags",paramMap);
 	}
 	
+	public int RegisterOrder(Map<String, Object> paramMap)throws Exception{
+		return devSession.update(namespace+"RegisterOrder",paramMap);
+	}
 	
 
 }

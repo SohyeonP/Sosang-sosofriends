@@ -89,8 +89,28 @@ public class ShopController {
 	
 	@RequestMapping(value="/order",method= {RequestMethod.GET,RequestMethod.POST})
 	public ResponseEntity<String> OrderRegister(@RequestBody OrderInfo request,String email){
+		
+		Map<String,Object> paramMap = new HashMap();
 		try {
-				List<Map<String,Object>> resultList = shopservice.getBagList(email);
+				
+			List<Map<String,Object>> resultList = shopservice.getBagList(email);
+			
+			if(resultList !=null) {
+				paramMap.put("useremail", resultList.get(0).get("").toString());
+				paramMap.put("kfs_pdtname", resultList.get(0).get("").toString());
+				paramMap.put("kfs_pdtprice", resultList.get(0).get("").toString());
+				paramMap.put("kfs_pdtnum", resultList.get(0).get("").toString());
+				paramMap.put("kfs_pdtcnt", resultList.get(0).get("").toString());
+				paramMap.put("ordernum",Utils.getRandomChar());
+				paramMap.put("orderprice", request.getKfs_pay());
+				paramMap.put("orderdate", Utils.getPastTimeS());
+				
+				int resultset = shopservice.RegisterOrder(paramMap);
+				
+			}else {
+				return  Utils.responseentity(cms.getMessage(401, "장바구니 목록조회에 실패하였습니다.", false));
+			}
+			
 		
 		}catch(Exception e){
 			e.printStackTrace();

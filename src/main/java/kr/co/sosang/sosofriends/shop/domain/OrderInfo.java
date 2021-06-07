@@ -1,7 +1,12 @@
 package kr.co.sosang.sosofriends.shop.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class OrderInfo {
-	private String kfs_ordernum;
-	private String kfs_orderprice;
+	
+	private String useremail;
 	private String kfs_pay;
 }

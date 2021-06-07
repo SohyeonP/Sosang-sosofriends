@@ -30,4 +30,8 @@ public class ShopServiceImpl implements ShopService{
 		return shopdao.Updatebags(paramMap);
 	}
 	
+	public int RegisterOrder(Map<String,Object> paramMap)throws Exception{
+		return shopdao.RegisterOrder(paramMap);
+	}
+	
 }

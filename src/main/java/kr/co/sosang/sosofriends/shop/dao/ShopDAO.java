@@ -13,5 +13,7 @@ public interface ShopDAO {
 
 	public int Updatebags(Map<String, Object> paramMap)throws Exception;
 
+	public int RegisterOrder(Map<String, Object> paramMap)throws Exception;
+
 
 }
