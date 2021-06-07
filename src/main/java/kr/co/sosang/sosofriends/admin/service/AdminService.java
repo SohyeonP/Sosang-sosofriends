@@ -11,7 +11,7 @@ public interface AdminService {
 
 	public int registerItems(Productinfo request,Map<String, Object> i_name)throws Exception;
 
-	public List<NoticeInfo> selectUserList()throws Exception;
+	public List<Map<String,Object>> selectUserList()throws Exception;
 	
 	
 }

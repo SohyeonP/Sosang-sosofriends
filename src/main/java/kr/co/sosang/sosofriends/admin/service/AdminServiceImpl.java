@@ -1,22 +1,22 @@
 package kr.co.sosang.sosofriends.admin.service;
 
-/*import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;*/
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Service;
 
 import kr.co.sosang.sosofriends.admin.dao.AdminDAO;
-import kr.co.sosang.sosofriends.admin.domain.NoticeInfo;
 import kr.co.sosang.sosofriends.admin.domain.Productinfo;
 import kr.co.sosang.sosofriends.utils.Utils;
-/*import kr.co.sosang.sosofriends.admin.dto.ProductDTO;*/
 
 @Service("adminservice")
 public class AdminServiceImpl implements AdminService {
 
-	
+	@Resource(name = "admindao")
 	private AdminDAO admindao;
 	
 	public int registerItems(Productinfo request, Map<String, Object> i_name) throws Exception {
@@ -60,7 +60,7 @@ public class AdminServiceImpl implements AdminService {
 		return 0;
 	}
 
-	public List<NoticeInfo> selectUserList()throws Exception{
+	public List<Map<String,Object>> selectUserList()throws Exception{
 		return admindao.selectUserList();
 	}
 

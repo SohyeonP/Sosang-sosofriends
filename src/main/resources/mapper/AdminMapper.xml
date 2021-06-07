@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.co.sosang.mapper.adminmapper">
      	<select id= "getlastNum" parameterType ="String">
@@ -6,7 +6,12 @@
 				from public.kfs_product_info
 				where kpi_cate_k = #{str}
      	</select>
-     	
+     	<!-- <resultMap id="noticeResult" type="HashMap">
+     		<result column="id" property="id"/>
+     		<result column="title" property="title"/>
+     		<result column="contents" property="contents"/>
+     		<result column="reg_date" property="reg_date"/>
+     	</resultMap> -->
      	<insert id = "addItems" parameterType="Map">
 			INSERT INTO public.kfs_product_info
 			(kpi_name
@@ -28,9 +33,9 @@
 			 </if>
 			)
      	</insert> 
-     	<select id="selectUserList">
-     		select *
-			from public.kfs_notice kn 
-			order by id desc
+     	<select id="selectUserList" resultType="Map">
+	     	SELECT *
+				FROM public.kfs_notice kn 
+				ORDER BY id desc
      	</select> 
 </mapper>

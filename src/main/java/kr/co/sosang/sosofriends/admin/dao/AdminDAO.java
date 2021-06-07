@@ -11,5 +11,5 @@ public interface AdminDAO {
 
 	public int addItems(Map<String, Object> param)throws Exception;
 
-	public List<NoticeInfo> selectUserList()throws Exception;
+	public List<Map<String,Object>> selectUserList()throws Exception;
 }

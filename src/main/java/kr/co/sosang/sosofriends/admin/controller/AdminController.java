@@ -1,6 +1,5 @@
 package kr.co.sosang.sosofriends.admin.controller;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -74,17 +73,19 @@ public class AdminController {
 		return null;
 	}
 
-	@RequestMapping(value = "/notice/list", method = { RequestMethod.GET, RequestMethod.POST })
+	@RequestMapping(value = "/noticelist", method = { RequestMethod.GET, RequestMethod.POST })
 	public ResponseEntity<String> getNotice() {
 		
-		List result = new ArrayList();
+			
 		try {
-			result = adminservice.selectUserList();
+			List<Map<String, Object>> resultList = adminservice.selectUserList();
+			
+			return Utils.responseentity(cms.getRsultListVlues(200, "Success!!", true, resultList));
 	
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return Utils.responseentity(cms.getRsultListVlues(0, "Success", true, result));
-		/*return null;*/
+		
+		return  Utils.responseentity(cms.getMessage(401, "공지사항 목록 불러오기 실패", false));
 	}
 }
