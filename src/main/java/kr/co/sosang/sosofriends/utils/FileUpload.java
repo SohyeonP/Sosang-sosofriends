@@ -15,14 +15,14 @@ public class FileUpload {
     public Map<String,Object> setFileUpload(MultipartFile multipartfile) {
     	
     	
-		/* filesavepath = "C:\\project\\sosofriends\\src\\main\\webapp\\WEB-INF\\itemimages";*/
-		/* fileurl = "http://localhost:8080/sosofriends/items";*/
+		 filesavepath = "C:\\project\\sosofriends\\src\\main\\webapp\\WEB-INF\\itemimages";
+		 fileurl = "http://localhost:8080/sosofriends/items";
 
 
         Map<String,Object> param = new HashMap();
 
         String folderday = Utils.formatStrDay1();
-        String file_url = "";
+		/*  String file_url = "";*/
         String filepath = filesavepath+"/"+folderday;
         String result = "Unavailable";
 
@@ -57,7 +57,7 @@ public class FileUpload {
                         fos.write(data);
                         fos.close();
 
-                        file_url = String.format("%s%s/%s", fileurl, folderday, saveFileName);
+                        String file_url = String.format("%s%s/%s", fileurl, folderday, saveFileName);
 
                         result = "Success";
                         param.put("result", result);

@@ -7,5 +7,5 @@
 	     	SELECT *
 				FROM public.kfs_notice kn 
 				ORDER BY id desc
-     	</select> 
+   </select> 
 </mapper>
