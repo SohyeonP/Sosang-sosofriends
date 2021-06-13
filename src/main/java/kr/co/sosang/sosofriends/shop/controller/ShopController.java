@@ -41,11 +41,11 @@ public class ShopController {
 			
 			int result1 = shopservice.existUserBag(request.getUseremail());
 			
-			paramMap.put("email",request.getUseremail());
-			paramMap.put("pdtname",request.getProduct_name());
-			paramMap.put("pdtprice",request.getProduct_price());
-			paramMap.put("pdtcnt", request.getProduct_cnt());
-			paramMap.put("pdtnum", request.getProduct_num());
+				paramMap.put("email",request.getUseremail());
+				paramMap.put("pdtname",request.getProduct_name());
+				paramMap.put("pdtprice",request.getProduct_price());
+				paramMap.put("pdtcnt", request.getProduct_cnt());
+				paramMap.put("pdtnum", request.getProduct_num());
 			
 			if(result1 !=0) {
 				int result = shopservice.Updatebags(paramMap);
