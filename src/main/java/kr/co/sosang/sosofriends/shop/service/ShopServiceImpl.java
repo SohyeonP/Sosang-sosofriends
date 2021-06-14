@@ -41,4 +41,12 @@ public class ShopServiceImpl implements ShopService{
 		return shopdao.delShopbag(useremail);
 	}
 	
+	public List<Map<String, Object>> getAllProductList() throws Exception{
+		return shopdao.getAllProductList();
+	}
+	
+	public List<Map<String, Object>> getOneProductList(String pdtnum)throws Exception{
+		return shopdao.getOneProductList(pdtnum);
+	}
+	
 }

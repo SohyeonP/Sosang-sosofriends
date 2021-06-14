@@ -19,6 +19,7 @@
 			 ,kpi_price
 			 ,kpi_reg_date
 			 ,kpi_cate_k
+			 ,kpi_hit
 			 <if test="!img != null and !img.equals('')">
 			 ,kpi_cate_img 
 			 </if>
@@ -28,6 +29,7 @@
 			 ,#{price}
 			 ,CURRENT_TIMESTAMP
 			 ,#{code}
+			 ,0
 			 <if test="!img != null and !img.equals('')">
 			 ,#{img}
 			 </if>
@@ -38,4 +40,5 @@
 				FROM public.kfs_notice kn 
 				ORDER BY id desc
      	</select> 
+     	
 </mapper>

@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import kr.co.sosang.sosofriends.shop.domain.OrderInfo;
@@ -138,6 +139,36 @@ public class ShopController {
 		
 		return  Utils.responseentity(cms.getMessage(401, "주문배송 조회에 실패하였습니다.", false));
 		
+	}
+	
+
+	@RequestMapping(value="/productall",method= {RequestMethod.GET,RequestMethod.POST})
+	public ResponseEntity<String> getAllProductList(){
+		
+		try {	
+			List<Map<String,Object>> resultList = shopservice.getAllProductList();
+			
+			return Utils.responseentity(cms.getRsultListVlues(200, "Success!!", true, resultList));
+				
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return  Utils.responseentity(cms.getMessage(401, "주문배송 등록에 실패하였습니다.", false));
+	}
+	
+	@RequestMapping(value="/productone",method= {RequestMethod.GET,RequestMethod.POST})
+	public ResponseEntity<String> getOneProductList(@RequestParam(value="pdtnum",required =true)String pdtnum){
+		
+		try {	
+			List<Map<String,Object>> resultList = shopservice.getOneProductList(pdtnum);
+			
+			
+			return Utils.responseentity(cms.getRsultListVlues(200, "Success!!", true, resultList));
+				
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return  Utils.responseentity(cms.getMessage(401, "주문배송 등록에 실패하였습니다.", false));
 	}
 	
 	@RequestMapping(value="/orderlist",method= {RequestMethod.GET,RequestMethod.POST})
