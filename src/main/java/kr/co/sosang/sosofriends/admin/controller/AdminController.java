@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -36,11 +37,16 @@ public class AdminController {
 	public CommonMsg cms = new CommonMsg();
 
 	@RequestMapping(value="/additems/register",method= {RequestMethod.GET,RequestMethod.POST})
-	public ResponseEntity<String> AddProduct(@RequestBody Productinfo request,@RequestPart(value="file", required = false) MultipartFile file){
+	public ResponseEntity<String> AddProduct(
+		@RequestParam(value="p_name",required =true)String name,
+		@RequestParam(value="p_price",required =true)String price,
+		@RequestParam(value="p_ccode",required =true)String c_code,
+		@RequestParam(value="p_kcode",required =true)String k_code,
+		@RequestPart(value="file", required = false) MultipartFile file){
 		/* 상품 아이디, 상품 코드, 상품 가격, 상품 하트 횟수,상품 판매 카운트, 상품 등록일 
 		 상품명을 만들고 상품을 등록한다 */
 	
-		Map<String,Object> param = new HashMap();
+		
 		
 		FileUpload upload = new FileUpload();
 		Map<String,Object> paramMap = new HashMap();
@@ -49,10 +55,12 @@ public class AdminController {
 			Map<String,Object> i_name = upload.setFileUpload(file);
 			
 			
-			int resultset = adminservice.registerItems(request,i_name);
+			int  resultset = adminservice.registerItems(name,price,c_code,k_code,i_name);
 			
-			if(resultset != 0) {
-				return  Utils.responseentity(cms.getMessage(200, "아이템 등록에 성공하였습니다",  true));
+			if(resultset !=0) {
+				return  Utils.responseentity(cms.getMessage(401, "아이템"+name+" 등록 성공", true));
+			}else {
+				return  Utils.responseentity(cms.getMessage(401, "아이템 등록에 실패하였습니다", false));
 			}
 			
 			
