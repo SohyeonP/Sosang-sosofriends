@@ -9,9 +9,10 @@ import kr.co.sosang.sosofriends.admin.domain.Productinfo;
 public interface AdminService {
 	
 
-	public int registerItems(Productinfo request,Map<String, Object> i_name)throws Exception;
 
 	public List<Map<String,Object>> selectUserList()throws Exception;
+
+	public int registerItems(String name, String price, String c_code, String k_code, Map<String, Object> i_name)throws Exception;
 	
 	
 }

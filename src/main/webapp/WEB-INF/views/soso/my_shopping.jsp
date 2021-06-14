@@ -34,47 +34,7 @@
            </div>
            
            <div class="check_list">
-             <div class="check_box all_choice">
-                   <input type="checkbox" name="checkbox" id="check01">
-                  <label for="check01">
-                  <img class="off" src="/assets/img/check_off.png">
-                  <img class="on" src="/assets/img/check_on.png">
-                  <p>전체선택</p>
-                   </label>
-               </div>
-               <div class="check_area">
-                   <div class="contents">
-                     <div class="check_box">
-                       <input type="checkbox" name="checkbox" id="check02" checked>
-                      <label for="check02">
-                      <img class="off" src="/assets/img/check_off.png">
-                      <img class="on" src="/assets/img/check_on.png">
-                       </label>
-                   </div>
-                       <div style="background-image: url('/assets/img/my/img01.png')" class="img"></div>
-                       <p>비접촉 스캔 체온계 어피치<br>69,000원</p>
-                       <div class="btn_area">
-                           <a class="btn on">구매하기</a>
-                           <a class="btn on">삭제하기</a>
-                       </div>
-                   </div>
-                   <div class="contents">
-                     <div class="check_box">
-                       <input type="checkbox" name="checkbox" id="check03">
-                      <label for="check03">
-                      <img class="off" src="/assets/img/check_off.png">
-                      <img class="on" src="/assets/img/check_on.png">
-                       </label>
-                   </div>
-                       <div style="background-image: url('/assets/img/my/img02.png')" class="img"></div>
-                       <p>죠르디 칫솔스탠드<br>13,000원</p>
-                       <div class="btn_area">
-                           <a class="btn">구매하기</a>
-                           <a class="btn">삭제하기</a>
-                       </div>
-                   </div>
-               </div>
-               <a class="bottom_btn">장바구니</a>
+               
            </div>
        </div>
     </div> 

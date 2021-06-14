@@ -18,7 +18,7 @@ public class ShopDAOImpl implements ShopDAO {
 	private String  namespace = "kr.co.sosang.mapper.shopmapper.";
 	
 	public List<Map<String, Object>> getBagList(String email)throws Exception{
-		return devSession.selectList(namespace+"getBagList");
+		return devSession.selectList(namespace+"getBagList",email);
 	}
 
 	public int existUserBag(String useremail)throws Exception{
@@ -35,6 +35,14 @@ public class ShopDAOImpl implements ShopDAO {
 	
 	public int RegisterOrder(Map<String, Object> paramMap)throws Exception{
 		return devSession.update(namespace+"RegisterOrder",paramMap);
+	}
+	
+	public List<Map<String, Object>> getOrderList(String email)throws Exception{
+		return devSession.selectList(namespace+"getOrderList",email);
+	}
+	
+	public int delShopbag(String useremail)throws Exception{
+		return devSession.selectOne(namespace+"delShopbag", useremail);
 	}
 	
 

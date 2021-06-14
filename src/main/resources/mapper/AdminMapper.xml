@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="kr.co.sosang.mapper.adminmapper">
-     	<select id= "getlastNum" parameterType ="String">
-     			select cast(substring(kpi_code,2,4)as integer)
+<mapper namespace="kr.co.sosang.mapper.adminmapper" >
+     	<select id= "getlastNum" parameterType ="String" resultType="int">
+     			SELECT MAX(cast(substring(kpi_code,2,4)as integer))
 				from public.kfs_product_info
 				where kpi_cate_k = #{str}
      	</select>
@@ -12,7 +12,7 @@
      		<result column="contents" property="contents"/>
      		<result column="reg_date" property="reg_date"/>
      	</resultMap> -->
-     	<insert id = "addItems" parameterType="Map">
+     	<select id = "addItems" parameterType="Map" resultType="int">
 			INSERT INTO public.kfs_product_info
 			(kpi_name
 			 ,kpi_code
@@ -29,10 +29,10 @@
 			 ,CURRENT_TIMESTAMP
 			 ,#{code}
 			 <if test="!img != null and !img.equals('')">
-			 #{img}
+			 ,#{img}
 			 </if>
 			)
-     	</insert> 
+     	</select> 
      	<select id="selectUserList" resultType="Map">
 	     	SELECT *
 				FROM public.kfs_notice kn 
