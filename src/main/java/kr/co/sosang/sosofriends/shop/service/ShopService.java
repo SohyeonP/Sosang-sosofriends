@@ -15,4 +15,6 @@ public interface ShopService {
 	
 	public int RegisterOrder(Map<String,Object> paramMap)throws Exception;
 
+	public List<Map<String, Object>> getOrderList(String useremail)throws Exception;
+
 }

@@ -9,4 +9,5 @@ public class OrderInfo {
 	
 	private String useremail;
 	private String kfs_pay;
+	private String order_address;
 }
