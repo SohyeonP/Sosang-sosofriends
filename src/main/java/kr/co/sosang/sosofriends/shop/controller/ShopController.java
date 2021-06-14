@@ -79,6 +79,7 @@ public class ShopController {
 		try {
 			List<Map<String,Object>> resultList = shopservice.getBagList(email);
 			
+			
 			return Utils.responseentity(cms.getRsultListVlues(200, "Success!!", true, resultList));
 			
 		}catch(Exception e) {
@@ -88,12 +89,12 @@ public class ShopController {
 	}
 	
 	@RequestMapping(value="/order",method= {RequestMethod.GET,RequestMethod.POST})
-	public ResponseEntity<String> OrderRegister(@RequestBody OrderInfo request,String email){
+	public ResponseEntity<String> OrderRegister(@RequestBody OrderInfo request){
 		
 		Map<String,Object> paramMap = new HashMap();
 		try {
 				
-			List<Map<String,Object>> resultList = shopservice.getBagList(email);
+			List<Map<String,Object>> resultList = shopservice.getBagList(request.getUseremail());
 			
 			if(resultList !=null) {
 				paramMap.put("useremail", resultList.get(0).get("").toString());
@@ -101,14 +102,17 @@ public class ShopController {
 				paramMap.put("kfs_pdtprice", resultList.get(0).get("").toString());
 				paramMap.put("kfs_pdtnum", resultList.get(0).get("").toString());
 				paramMap.put("kfs_pdtcnt", resultList.get(0).get("").toString());
+				paramMap.put("orderaddress",request.getOrder_address());
 				paramMap.put("ordernum",Utils.getRandomChar());
 				paramMap.put("orderprice", request.getKfs_pay());
 				paramMap.put("orderdate", Utils.getPastTimeS());
 				
 				int resultset = shopservice.RegisterOrder(paramMap);
 				
+				return  Utils.responseentity(cms.getMessage(201, "주문배송 등록에 성공하였습니다",  true));
+				
 			}else {
-				return  Utils.responseentity(cms.getMessage(401, "장바구니 목록조회에 실패하였습니다.", false));
+				return  Utils.responseentity(cms.getMessage(401, "주문배송 등록에 실패하였습니다.", false));
 			}
 			
 		
@@ -116,7 +120,20 @@ public class ShopController {
 			e.printStackTrace();
 		}
 		
-		return  Utils.responseentity(cms.getMessage(401, "장바구니 목록조회에 실패하였습니다.", false));
+		return  Utils.responseentity(cms.getMessage(401, "주문배송 조회에 실패하였습니다.", false));
 		
+	}
+	
+	@RequestMapping(value="/orderlist",method= {RequestMethod.GET,RequestMethod.POST})
+	public ResponseEntity<String> getOrderList(@RequestBody OrderInfo request){
+		
+		try {	
+			List<Map<String,Object>> resultList = shopservice.getOrderList(request.getUseremail());
+			
+			return Utils.responseentity(cms.getRsultListVlues(200, "Success!!", true, resultList));
+				
+		}catch(Exception e) {
+			return  Utils.responseentity(cms.getMessage(401, "주문배송 등록에 실패하였습니다.", false));
+		}
 	}
 }

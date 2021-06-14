@@ -33,5 +33,8 @@ public class ShopServiceImpl implements ShopService{
 	public int RegisterOrder(Map<String,Object> paramMap)throws Exception{
 		return shopdao.RegisterOrder(paramMap);
 	}
+	public List<Map<String, Object>> getOrderList(String useremail)throws Exception{
+		return shopdao.getOrderList(useremail);
+	}
 	
 }

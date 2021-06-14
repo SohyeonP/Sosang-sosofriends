@@ -1,20 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.co.sosang.mapper.shopmapper">
-	<insert id = "getBagList" parameterType="Map">
-	</insert>
+	<select id = "getBagList" parameterType="String" resultType="Map">
+		select *
+		from kfs_shopbag ks 
+		where kps_email = #{str}
+	</select>
 	<select id="selectUserList" resultType="Map">
 	     	SELECT *
 			FROM public.kfs_notice kn 
 			ORDER BY id desc
    </select>
    <select id="existUserBag" parameterType="String">
-   		select
+   		select count(*)
+   		from public.kfs_shopbag
+   		where kps_email = #{str}
    </select>
    <select id="Addbbags" parameterType="Map">
-   </select>
-   <select id="Updatebags" parameterType="Map">
+   	insert into kfs_shopbag
+   	(ksp_name,
+   	ksp_price,
+   	ksp_cnt,
+   	kps_pdtnum,
+   	ksp_email)
+   	values(
+   	#{pdtname},
+   	#{pdprice},
+   	#{pdtcnt},
+   	#{pdtnum},
+   	#{email}
+   	)
    </select>
    <select id="RegisterOrder" parameterType="Map">
+   insert into kfs_order_info
+   	(email,
+   	kor_pdtnum,
+   	kor_cnt,
+   	kor_address,
+   	kor_num,
+   	kor_price,
+   	kor_date,)
+   	values(
+   	#{useremail},
+   	#{kfs_pdtnum},
+   	#{kfs_pdtcnt},
+   	#{orderaddress},
+   	#{ordernum},
+   	#{orderprice},
+   	#{orderdate}
+   	)
+   </select>
+   <select id="getOrderList"  parameterType="String" resultType="Map">
+   	select *
+   	from kfs_order_info
+   	where email = #{str}
    </select>
 </mapper>

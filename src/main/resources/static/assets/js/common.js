@@ -5,9 +5,9 @@ common={
         var itemname = $("#name").val();
         var kakaoitems = $("form[name=itemform]").serialize();
         console.log(kakaoitems);  
-       /* $.ajax({
+        $.ajax({
             type: "POST",
-            url: "../additems/register",
+            url: "../admin/additems/register",
             dataType: "json",
             data: kakaoitems,
             success: function(data){
@@ -25,7 +25,7 @@ common={
                 console.log(err);
 
             }
-        });*/
+        });
     },
     login:function(){
 			
