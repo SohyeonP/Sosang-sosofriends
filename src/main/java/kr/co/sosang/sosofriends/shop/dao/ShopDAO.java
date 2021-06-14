@@ -17,5 +17,7 @@ public interface ShopDAO {
 
 	public List<Map<String, Object>> getOrderList(String useremail)throws Exception;
 
+	public int delShopbag(String useremail)throws Exception;
+
 
 }

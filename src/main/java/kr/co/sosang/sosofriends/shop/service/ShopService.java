@@ -17,4 +17,6 @@ public interface ShopService {
 
 	public List<Map<String, Object>> getOrderList(String useremail)throws Exception;
 
+	public int delShopbag(String useremail)throws Exception;
+
 }

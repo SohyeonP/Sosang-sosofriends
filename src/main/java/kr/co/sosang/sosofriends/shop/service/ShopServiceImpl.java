@@ -37,4 +37,8 @@ public class ShopServiceImpl implements ShopService{
 		return shopdao.getOrderList(useremail);
 	}
 	
+	public int delShopbag(String useremail)throws Exception{
+		return shopdao.delShopbag(useremail);
+	}
+	
 }
