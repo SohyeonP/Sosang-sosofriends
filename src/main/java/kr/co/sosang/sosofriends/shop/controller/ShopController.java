@@ -95,7 +95,7 @@ public class ShopController {
 		try {
 				
 			List<Map<String,Object>> resultList = shopservice.getBagList(request.getUseremail());
-			
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+resultList);
 			if(resultList !=null) {
 				paramMap.put("useremail", resultList.get(0).get("").toString());
 				paramMap.put("kfs_pdtname", resultList.get(0).get("").toString());
