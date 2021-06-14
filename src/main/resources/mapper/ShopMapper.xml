@@ -74,4 +74,14 @@
    	DELETE FROM kfs_shopbag
    	WHERE kps_email = #{str}
    </select>
+   <select id="getAllProductList" resultType="Map">
+     		select *
+			from kfs_product_info
+   </select>
+    <select id="getOneProductList" parameterType="String" resultType="Map">
+     		select *
+			from kfs_product_info
+			WHERE kpi_code =#{str}
+   </select>
+   
 </mapper>
