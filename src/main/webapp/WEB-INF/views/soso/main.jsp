@@ -146,9 +146,9 @@
                     <a class="rightTit">왕초보운전자 필수템🚨</a>
                     <a class="rightCon">귀염뽀짝 차량용품 나가신다 길을비켜라!!</a>
                     <div class="rightLike">
-                        <a><img src"/assets/img/main/like.png">좋아요 268</a>
-                        <a><img src"/assets/img/main/comment.png">댓글 265</a>
-                        <a><img src"/assets/img/main/share.png">공유하기</a>
+                        <a><img src="/assets/img/main/like.png">좋아요 268</a>
+                        <a><img src="/assets/img/main/comment.png">댓글 265</a>
+                        <a><img src="/assets/img/main/share.png">공유하기</a>
                     </div>
                     <input type="text" placeholder="댓글을 달아주세요" class="rightInput">
                     <p class="pickTit"><span>PICK!</span> 추천 상품</p>
@@ -158,7 +158,7 @@
                             <p>차량용목쿠션_죠르디<br><span>12,000원</span></p>
                         </a>
                         <a class="pickShop">
-                            <img src"/assets/img/main/bag.png">
+                            <img src="/assets/img/main/bag.png">
                         </a>
                     </div>
                 </div>
@@ -185,7 +185,7 @@
                             <p>차량용목쿠션_죠르디<br><span>12,000원</span></p>
                         </a>
                         <a class="pickShop">
-                            <img src"/assets/img/main/bag.png">
+                            <img src="/assets/img/main/bag.png">
                         </a>
                     </div>
                 </div>
@@ -214,7 +214,7 @@
                 <a class="itemName">비접촉 스캔 체온계 어피치</a>
                 <a class="itemPrice">69,000원</a>
                 <a class="pickShop">
-                    <img src"/assets/img/main/bag.png">
+                    <img src="/assets/img/main/bag.png">
                 </a>
             </div>
             <div class="mainCon03item">
@@ -222,7 +222,7 @@
                 <a class="itemName">죠르디 칫솔스탠드</a>
                 <a class="itemPrice">13,000원</a>
                 <a class="pickShop">
-                    <img src"/assets/img/main/bag.png">
+                    <img src="/assets/img/main/bag.png">
                 </a>
             </div>
             <div class="mainCon03item">
@@ -230,7 +230,7 @@
                 <a class="itemName">스윗드림바디필로우_라이언</a>
                 <a class="itemPrice">33,000원</a>
                 <a class="pickShop">
-                    <img src"/assets/img/main/bag.png">
+                    <img src="/assets/img/main/bag.png">
                 </a>
             </div>
             <div class="mainCon03item">
@@ -341,6 +341,14 @@
         },
         allowTouchMove : false
     });
+    
+    
+    $(document).ready(function(){
+    	$(".pickShop").click(function(){
+    		var name = $(this).parent().children(".itemName").text();
+    		var price = $(this).parent().children(".itemPrice").text();
+    	})
+    })
 </script>
 </body>
 </html>

@@ -1,6 +1,7 @@
  if(!window.common)common = {};
 
 common={
+	id: "",
     additems :function(){
         var itemname = $("#name").val();
         var kakaoitems = $("form[name=itemform]").serialize();
@@ -31,12 +32,17 @@ common={
 			
 	},
 	
-	addbags : function(){
+	addbags : function(name, price ){
+		var data = { 
+						useremail: common.id,
+						product_name: name,
+						product_price: price
+					}
 		$.ajax({
             type: "POST",
             url: "../shop/addbags",
             dataType: "json",
-            data: { },
+            data: { useremail: common.code },
             success: function(data){
 	
 				if (data.status.code == "200") {
@@ -58,7 +64,7 @@ common={
             type: "POST",
             url: "../bagslist",
             dataType: "json",
-            data: JSON.stringify({ useremail:'barbara0419@naver.com' }),
+            data: JSON.stringify({ useremail: common.id }),
             contentType: "application/json",
             success: function(data){
 	

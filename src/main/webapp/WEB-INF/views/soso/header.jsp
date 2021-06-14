@@ -47,9 +47,8 @@
 </div>
 
 <script type="text/javascript">
-var code = '${sessionScope.l_code}';
+common.id = '${sessionScope.userid}';
 
-console.log(code)
 	function loginpop(){
 		var left = ($(window).width() / 2) - 200;
 		var top  = ($(window).height() / 2) - 300;
