@@ -34,11 +34,7 @@
             </div>
 
             <div class="check_list">
-                <div class="check_list check_list_none">
-                    <img src="/assets/img/my/none-img02.png">
-                    <p>아직 관심 상품이 없네요!<br>
-                    귀여운 프렌즈 상품을 추천드릴게요</p>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -75,7 +71,11 @@
 
 
 
-
+<script>
+$(document).ready(function(){
+	common.baglists();
+})
+</script>
 </body>
 
 </html>

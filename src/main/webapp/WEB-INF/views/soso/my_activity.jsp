@@ -27,9 +27,9 @@
 
             <div class="my_side_menu">
                 <ul>
-                    <li><a>최근 본 상품</a></li>
-                    <li class="on"><a>내 활동</a></li>
-                    <li><a>장바구니</a></li>
+                    <li><a href="recentlist">최근 본 상품</a></li>
+                    <li class="on"><a href="./myactivity">내 활동</a></li>
+                    <li><a href="./shopping">장바구니</a></li>
                     <li><a>주문내역</a></li>
                 </ul>
             </div>
@@ -40,7 +40,7 @@
         </div>
     </div>
 
-
+<c:if test="${sessionScope.userid eq null}">
     <div class="popup">
         <div class="bg"></div>
         <div class="popup_area my_activity">
@@ -49,11 +49,11 @@
                 <img src="/assets/img/my/login.png">
                 <p>로그인 후에 이용해주세요!</p>
                 <p>로그인을 해야 확인이 가능합니다! 로그인 후 이용하기❤️</p>
-                <a><img src="/assets/img/kakao_login.png"></a>
+                <a onclick="loginpop();"><img src="/assets/img/kakao_login.png"></a>
             </div>
         </div>
     </div>
-
+</c:if>
 
 
 
@@ -88,6 +88,14 @@ $(document).ready(function(){
 		$(".popup").hide();
 	})
 })
+
+function loginpop(){
+	var left = ($(window).width() / 2) - 200;
+	var top  = ($(window).height() / 2) - 300;
+	var specs = "width = "+400+", height = "+600+", top = "+top+", left = "+left+", location = no, menubar=no, status=no, toolbar=no";
+	
+	window.open("./sosologin","로그인",specs);
+}
 </script>
 
 
