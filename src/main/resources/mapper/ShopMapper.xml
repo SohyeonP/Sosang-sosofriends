@@ -70,4 +70,8 @@
    	from kfs_order_info
    	where email = #{str}
    </select>
+   <select id="delShopbag" parameterType="String" resultType="int">
+   	DELETE FROM kfs_shopbag
+   	WHERE kps_email = #{str}
+   </select>
 </mapper>

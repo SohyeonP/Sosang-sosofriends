@@ -41,5 +41,9 @@ public class ShopDAOImpl implements ShopDAO {
 		return devSession.selectList(namespace+"getOrderList",email);
 	}
 	
+	public int delShopbag(String useremail)throws Exception{
+		return devSession.selectOne(namespace+"delShopbag", useremail);
+	}
+	
 
 }
