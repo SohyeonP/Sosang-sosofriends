@@ -98,7 +98,6 @@ public class ShopController {
 		try {
 				
 			List<Map<String,Object>> resultList = shopservice.getBagList(request.getUseremail());
-			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+resultList.toString());
 			if(resultList !=null) {
 				/*paramMap.put("useremail", resultList.get(0).get("").toString());
 				paramMap.put("kfs_pdtname", resultList.get(0).get("").toString());
@@ -117,17 +116,17 @@ public class ShopController {
 					paramMap.put("orderprice", totalprice);
 					paramMap.put("orderdate", Utils.getPastTimeS());
 				
-				System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+paramMap);
+				
 				int resultset = shopservice.RegisterOrder(paramMap);
 				if(resultset !=0) {
 					
-					/*int rsultdel = shopservice.delShopbag(request.getUseremail());
 					
-					if(rsultdel !=0) {
-						return  Utils.responseentity(cms.getMessage(201, "주문배송 등록에 성공하였습니다",  true));
-					}else {
-						return  Utils.responseentity(cms.getMessage(401, "주문배송 등록에 실패하였습니다.", false));
-					}*/
+					  int rsultdel = shopservice.delShopbag(request.getUseremail());
+					  
+					  if(rsultdel !=0) { return Utils.responseentity(cms.getMessage(201,
+							  "주문배송 등록에 성공하였습니다", true)); }else { return
+					  Utils.responseentity(cms.getMessage(401, "주문배송 등록에 실패하였습니다.", false)); }
+					 
 				}else {
 					return  Utils.responseentity(cms.getMessage(401, "주문배송 등록에 실패하였습니다.", false));
 				}						

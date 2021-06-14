@@ -2,9 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.co.sosang.mapper.shopmapper">
 	<select id = "getBagList" parameterType="String" resultType="Map">
-		select *
-		from kfs_shopbag ks 
-		where kps_email = #{str}
+		select a.id,a.ksp_name,a.ksp_price,ks.kpi_cate_img,ks.kpi_code,a.ksp_cnt
+		from kfs_shopbag a
+		left join kfs_product_info ks on a.kps_pdtnum = ks.kpi_code
+		where a.kps_email = #{str}
 	</select>
 	<select id="selectUserList" resultType="Map">
 	     	SELECT *
@@ -25,7 +26,7 @@
    	kps_email)
    	values(
    	#{pdtname},
-   	#{pdprice},
+   	#{pdtprice},
    	#{pdtcnt},
    	#{pdtnum},
    	#{email}
