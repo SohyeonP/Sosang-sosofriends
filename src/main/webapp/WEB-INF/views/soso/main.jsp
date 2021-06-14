@@ -213,6 +213,7 @@
                 <div class="mainCon03img" style="background-image: url(/assets/img/main/item01.png)"></div>
                 <a class="itemName">비접촉 스캔 체온계 어피치</a>
                 <a class="itemPrice">69,000원</a>
+                <input type="hidden" class="itemCode" value="A0002T2021061421">
                 <a class="pickShop">
                     <img src="/assets/img/main/bag.png">
                 </a>
@@ -221,6 +222,7 @@
                 <div class="mainCon03img" style="background-image: url(/assets/img/main/item02.png)"></div>
                 <a class="itemName">죠르디 칫솔스탠드</a>
                 <a class="itemPrice">13,000원</a>
+                <input type="hidden" class="itemCode" value="M0002T2021061421">
                 <a class="pickShop">
                     <img src="/assets/img/main/bag.png">
                 </a>
@@ -229,6 +231,7 @@
                 <div class="mainCon03img" style="background-image: url(/assets/img/main/item03.png)"></div>
                 <a class="itemName">스윗드림바디필로우_라이언</a>
                 <a class="itemPrice">33,000원</a>
+                <input type="hidden" class="itemCode" value="R0002L2021061421">
                 <a class="pickShop">
                     <img src="/assets/img/main/bag.png">
                 </a>
@@ -237,6 +240,7 @@
                 <div class="mainCon03img" style="background-image: url(/assets/img/main/item04.png)"></div>
                 <a class="itemName">죠르디 페이스 말랑쿠션</a>
                 <a class="itemPrice">36,000원</a>
+                <input type="hidden" class="itemCode" value="J0002T2021061421">
                 <a class="pickShop">
                     <img src="/assets/img/main/bag.png">
                 </a>
@@ -346,7 +350,10 @@
     $(document).ready(function(){
     	$(".pickShop").click(function(){
     		var name = $(this).parent().children(".itemName").text();
-    		var price = $(this).parent().children(".itemPrice").text();
+    		var price = $(this).parent().children(".itemPrice").text().split('원')[0];
+    		var num = $(this).parent().children(".itemCode").val();
+    		
+    		common.addbags(name, price, num);
     	})
     })
 </script>

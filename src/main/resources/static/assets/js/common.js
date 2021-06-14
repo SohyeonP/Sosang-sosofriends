@@ -32,27 +32,31 @@ common={
 			
 	},
 	
-	addbags : function(name, price ){
+	addbags : function(name, price, num ){
 		var data = { 
 						useremail: common.id,
 						product_name: name,
-						product_price: price
+						product_price: price,
+						product_cnt : '1',
+						product_num : num
 					}
+					console.log(data)
 		$.ajax({
             type: "POST",
-            url: "../shop/addbags",
+            url: "../addbags",
             dataType: "json",
-            data: { useremail: common.code },
+            data: JSON.stringify(data),
+            contentType:"application/json",
             success: function(data){
 	
 				if (data.status.code == "200") {
-					
+					alert("장바구니에 상품이 담겼습니다!");
+					console.log(data)
 				} else {
-					
+					console.log("!2312123123")
 				}
 			},
             error: function(err){
-                alert("Error:카카오 아이템"+itemname+"이 등록실패!!");
                 console.log(err);
 
             }
@@ -76,24 +80,32 @@ common={
                     	
                     	$(".check_list").append(html);
 					}else{
+						
 						html = ' <div class="check_box all_choice">';
                    		html += '<input type="checkbox" name="checkbox" id="check01">';
                   		html += '<label for="check01">';
                   		html += '<img class="off" src="/assets/img/check_off.png">';
                   		html += '<img class="on" src="/assets/img/check_on.png">';
                   		html += '<p>전체선택</p></label></div>';
-                  		html += '<div class="check_area"><div class="contents"><div class="check_box">';
-                        html += '<input type="checkbox" name="checkbox" id="check02" checked>';
-                      	html += '<label for="check02">';
-                      	html += '<img class="off" src="/assets/img/check_off.png">';
-                      	html += '<img class="on" src="/assets/img/check_on.png"></label></div>';
-                     /*  <div style="background-image: url('/assets/img/my/img01.png')" class="img"></div>
-                       <p>비접촉 스캔 체온계 어피치<br>69,000원</p>
-                       <div class="btn_area">
-                           <a class="btn on">구매하기</a>
-                           <a class="btn on">삭제하기</a>
-                       </div>*/
-                   		html += '</div></div><a class="bottom_btn">장바구니</a>';
+                      	
+                      	var items = data.body;
+                      	console.log(items);
+                      	
+                      	items.forEach(function(item){
+	
+	                  		html += '<div class="check_area"><div class="contents"><div class="check_box">';
+	                        html += '<input type="checkbox" name="checkbox" id="check02" checked>';
+	                      	html += '<label for="check02">';
+	                      	html += '<img class="off" src="/assets/img/check_off.png">';
+	                      	html += '<img class="on" src="/assets/img/check_on.png"></label></div>';
+							html += '<div style="background-image: url(\'/assets/itemimages/'+ item.kpi_cate_img +'\')" class="img"></div>';
+							html += '<p>'+ item.ksp_name +'<br>'+ item.ksp_price +'원</p>';
+							html += '<div class="btn_area"><a class="btn on">구매하기</a><a class="btn on">삭제하기</a></div></div>';
+						})
+						
+                   		html += '</div><a class="bottom_btn">장바구니</a>';
+                   		
+                   		$(".check_list").append(html);
 						
 					}
 				} else {
