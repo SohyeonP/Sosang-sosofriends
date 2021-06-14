@@ -14,8 +14,11 @@ public class FileUpload {
 
     public Map<String,Object> setFileUpload(MultipartFile multipartfile) {
     	
-    	filesavepath ="C:\\Users\\sohyeonPark\\Desktop\\mycode\\Sosang-sosofriends\\src\\main\\webapp\\WEB-INF\\itemimages";
-		 /*filesavepath = "C:\\project\\sosofriends\\src\\main\\webapp\\WEB-INF\\itemimages";*/
+		/*
+		 * filesavepath
+		 * ="C:\\Users\\sohyeonPark\\Desktop\\mycode\\Sosang-sosofriends\\src\\main\\webapp\\WEB-INF\\itemimages";
+		 */
+		 filesavepath = "C:\\project\\sosofriends\\src\\main\\webapp\\WEB-INF\\itemimages";
 		 fileurl = "http://localhost:8080/sosofriends/items";
 
 
