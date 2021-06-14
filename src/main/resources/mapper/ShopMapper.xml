@@ -11,18 +11,18 @@
 			FROM public.kfs_notice kn 
 			ORDER BY id desc
    </select>
-   <select id="existUserBag" parameterType="String">
+   <select id="existUserBag" parameterType="String" resultType="int">
    		select count(*)
    		from public.kfs_shopbag
    		where kps_email = #{str}
    </select>
-   <select id="Addbbags" parameterType="Map">
+   <select id="Addbbags" parameterType="Map" resultType="int">
    	insert into kfs_shopbag
    	(ksp_name,
    	ksp_price,
    	ksp_cnt,
    	kps_pdtnum,
-   	ksp_email)
+   	kps_email)
    	values(
    	#{pdtname},
    	#{pdprice},
@@ -31,7 +31,22 @@
    	#{email}
    	)
    </select>
-   <select id="RegisterOrder" parameterType="Map">
+   <select id="Updatebags" parameterType="Map" resultType="int">
+   	insert into kfs_shopbag
+   	(ksp_name,
+   	ksp_price,
+   	ksp_cnt,
+   	kps_pdtnum,
+   	kps_email)
+   	values(
+   	#{pdtname},
+   	#{pdtprice},
+   	#{pdtcnt},
+   	#{pdtnum},
+   	#{email}
+   	)
+   </select>
+   <select id="RegisterOrder" parameterType="Map" resultType="int">
    insert into kfs_order_info
    	(email,
    	kor_pdtnum,
