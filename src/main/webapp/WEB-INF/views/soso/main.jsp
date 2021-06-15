@@ -146,9 +146,9 @@
                     <a class="rightTit">왕초보운전자 필수템🚨</a>
                     <a class="rightCon">귀염뽀짝 차량용품 나가신다 길을비켜라!!</a>
                     <div class="rightLike">
-                        <a><img src"/assets/img/main/like.png">좋아요 268</a>
-                        <a><img src"/assets/img/main/comment.png">댓글 265</a>
-                        <a><img src"/assets/img/main/share.png">공유하기</a>
+                        <a><img src="/assets/img/main/like.png">좋아요 268</a>
+                        <a><img src="/assets/img/main/comment.png">댓글 265</a>
+                        <a><img src="/assets/img/main/share.png">공유하기</a>
                     </div>
                     <input type="text" placeholder="댓글을 달아주세요" class="rightInput">
                     <p class="pickTit"><span>PICK!</span> 추천 상품</p>
@@ -158,7 +158,7 @@
                             <p>차량용목쿠션_죠르디<br><span>12,000원</span></p>
                         </a>
                         <a class="pickShop">
-                            <img src"/assets/img/main/bag.png">
+                            <img src="/assets/img/main/bag.png">
                         </a>
                     </div>
                 </div>
@@ -185,7 +185,7 @@
                             <p>차량용목쿠션_죠르디<br><span>12,000원</span></p>
                         </a>
                         <a class="pickShop">
-                            <img src"/assets/img/main/bag.png">
+                            <img src="/assets/img/main/bag.png">
                         </a>
                     </div>
                 </div>
@@ -213,30 +213,34 @@
                 <div class="mainCon03img" style="background-image: url(/assets/img/main/item01.png)"></div>
                 <a class="itemName">비접촉 스캔 체온계 어피치</a>
                 <a class="itemPrice">69,000원</a>
+                <input type="hidden" class="itemCode" value="A0002T2021061421">
                 <a class="pickShop">
-                    <img src"/assets/img/main/bag.png">
+                    <img src="/assets/img/main/bag.png">
                 </a>
             </div>
             <div class="mainCon03item">
                 <div class="mainCon03img" style="background-image: url(/assets/img/main/item02.png)"></div>
                 <a class="itemName">죠르디 칫솔스탠드</a>
                 <a class="itemPrice">13,000원</a>
+                <input type="hidden" class="itemCode" value="M0002T2021061421">
                 <a class="pickShop">
-                    <img src"/assets/img/main/bag.png">
+                    <img src="/assets/img/main/bag.png">
                 </a>
             </div>
             <div class="mainCon03item">
                 <div class="mainCon03img" style="background-image: url(/assets/img/main/item03.png)"></div>
                 <a class="itemName">스윗드림바디필로우_라이언</a>
                 <a class="itemPrice">33,000원</a>
+                <input type="hidden" class="itemCode" value="R0002L2021061421">
                 <a class="pickShop">
-                    <img src"/assets/img/main/bag.png">
+                    <img src="/assets/img/main/bag.png">
                 </a>
             </div>
             <div class="mainCon03item">
                 <div class="mainCon03img" style="background-image: url(/assets/img/main/item04.png)"></div>
                 <a class="itemName">죠르디 페이스 말랑쿠션</a>
                 <a class="itemPrice">36,000원</a>
+                <input type="hidden" class="itemCode" value="J0002T2021061421">
                 <a class="pickShop">
                     <img src="/assets/img/main/bag.png">
                 </a>
@@ -341,6 +345,17 @@
         },
         allowTouchMove : false
     });
+    
+    
+    $(document).ready(function(){
+    	$(".pickShop").click(function(){
+    		var name = $(this).parent().children(".itemName").text();
+    		var price = $(this).parent().children(".itemPrice").text().split('원')[0];
+    		var num = $(this).parent().children(".itemCode").val();
+    		
+    		common.addbags(name, price, num);
+    	})
+    })
 </script>
 </body>
 </html>

@@ -3,10 +3,11 @@
 <mapper namespace="kr.co.sosang.mapper.shopmapper">
 	<select id = "getBagList" parameterType="String" resultType="Map">
 		select a.id,a.ksp_name,a.ksp_price,ks.kpi_cate_img,ks.kpi_code,a.ksp_cnt
-		from kfs_shopbag a
-		left join kfs_product_info ks on a.kps_pdtnum = ks.kpi_code
-		where a.kps_email = #{str}
-	</select>
+      from kfs_shopbag a
+      left join kfs_product_info ks on a.kps_pdtnum = ks.kpi_code
+      where kps_email = #{str}
+	</select> 
+
 	<select id="selectUserList" resultType="Map">
 	     	SELECT *
 			FROM public.kfs_notice kn 
