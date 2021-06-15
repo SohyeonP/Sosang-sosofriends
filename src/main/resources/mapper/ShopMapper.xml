@@ -7,6 +7,7 @@
       left join kfs_product_info ks on a.kps_pdtnum = ks.kpi_code
       where kps_email = #{str}
 	</select> 
+
 	<select id="selectUserList" resultType="Map">
 	     	SELECT *
 			FROM public.kfs_notice kn 
