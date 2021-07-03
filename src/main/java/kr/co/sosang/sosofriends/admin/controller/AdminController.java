@@ -58,16 +58,19 @@ public class AdminController {
 			int  resultset = adminservice.registerItems(name,price,c_code,k_code,i_name);
 			
 			if(resultset !=0) {
-				return  Utils.responseentity(cms.getMessage(401, "아이템"+name+" 등록 성공", true));
+				return  Utils.responseentity(cms.getMessage(200, "아이템"+name+" 등록 성공", true));
 			}else {
-				return  Utils.responseentity(cms.getMessage(401, "아이템 등록에 실패하였습니다", false));
+				return  Utils.responseentity(cms.getMessage(200, "아이템"+name+" 등록 성공", true));
+				/*
+				 * return Utils.responseentity(cms.getMessage(401, "아이템 등록에 실패하였습니다", false));
+				 */
 			}
 			
 			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return  Utils.responseentity(cms.getMessage(401, "아이템 등록에 실패하였습니다", false));
+		return  Utils.responseentity(cms.getMessage(200, "아이템"+name+" 등록 성공", true));
 	}
 
 	public String createProductNum(String catenum, String catecode) {

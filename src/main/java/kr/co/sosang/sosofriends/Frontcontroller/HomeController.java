@@ -64,6 +64,12 @@ public class HomeController {
 	public String hotitem() {
 		return "/soso/hot_item";
 	}
+	
+
+	@RequestMapping(value="/Porder")
+	public String order() {
+		return "/soso/order";
+	}
 
 
 }

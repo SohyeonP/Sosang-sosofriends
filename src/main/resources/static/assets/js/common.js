@@ -103,7 +103,7 @@ common={
 							html += '<div class="btn_area"><a class="btn on">구매하기</a><a class="btn on">삭제하기</a></div></div>';
 						})
 						
-                   		html += '</div><a class="bottom_btn">장바구니</a>';
+                   		html += '</div><a class="bottom_btn" onclick="location.href=\'Porder\'">구매하기</a>';
                    		
                    		$(".check_list").append(html);
 						
@@ -117,5 +117,64 @@ common={
 
             }
         });
+	},
+	
+	orderlist :function(){
+			$.ajax({
+            type: "POST",
+            url: "../bagslist",
+            dataType: "json",
+            data: JSON.stringify({ useremail: common.id }),
+            contentType: "application/json",
+            success: function(data){
+	
+				if (data.status.code == "200") {
+                      	var items = data.body;
+                      	console.log(items);
+                      	html = '';
+                      	var price = 0;
+                      	items.forEach(function(item){
+	
+	                  		html += '<tr><td style="width:700px;"><div class="orderimg" style="background-image: url(\'/assets/itemimages/'+ item.kpi_cate_img +'\')"></div>';
+	                  		html += '<p class="ordertext">'+ item.ksp_name +'</p></td>';
+	                  		html += '<td>-</td><td>1</td><td>-</td><td>'+ item.ksp_price + '원</td></tr>';
+	                  		
+	                  		const iprice = item.ksp_price.replace(",", "");
+	                  		price += Number(iprice);
+						})
+                   		$(".tbody").append(html);
+                   		$(".price").text(price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+				} else {
+					console.log("errr")
+				}
+			},
+            error: function(err){
+                console.log(err);
+
+            }
+        });
+	},
+	
+	order : function(price, address){
+		$.ajax({
+			type:'post', 
+			url: "../order",
+            dataType: "json",
+            data: JSON.stringify({ useremail: common.id, kfs_pay: price, order_address: address }),
+            contentType: "application/json",
+            success: function(data){
+				if (data.status.code == "200") {
+					alert("주문이 완료 되었습니다.");
+					location.href="../shopping";
+				}else{
+					console.log("err")
+				}
+			},
+			 error: function(err){
+                console.log(err);
+
+            }
+	
+		})
 	}
 }

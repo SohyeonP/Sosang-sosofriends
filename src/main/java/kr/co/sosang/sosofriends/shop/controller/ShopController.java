@@ -105,27 +105,21 @@ public class ShopController {
 				paramMap.put("kfs_pdtnum", resultList.get(0).get("").toString());
 				paramMap.put("kfs_pdtcnt", resultList.get(0).get("").toString());*/
 				
-				for(int i=0;i<resultList.size();i++) {
-					paramMap1.put("name"+i, resultList.get(i).get("ksp_name").toString());
-					paramMap1.put("price"+i, resultList.get(i).get("ksp_price").toString());
-					paramMap1.put("cnt"+i, resultList.get(i).get("ksp_cnt=1").toString());
-					totalprice +=Integer.parseInt(resultList.get(i).get("ksp_price").toString());
-				}
+				
+				/* String i = Integer.toString(totalprice); */
+					paramMap.put("useremail",request.getUseremail());
 					paramMap.put("orderaddress",request.getOrder_address());
 					paramMap.put("ordernum",Utils.getRandomChar());
-					paramMap.put("orderprice", totalprice);
+					paramMap.put("orderprice",request.getKfs_pay());
 					paramMap.put("orderdate", Utils.getPastTimeS());
 				
 				
 				int resultset = shopservice.RegisterOrder(paramMap);
 				if(resultset !=0) {
+					 
 					
-					
-					  int rsultdel = shopservice.delShopbag(request.getUseremail());
-					  
-					  if(rsultdel !=0) { return Utils.responseentity(cms.getMessage(201,
-							  "주문배송 등록에 성공하였습니다", true)); }else { return
-					  Utils.responseentity(cms.getMessage(401, "주문배송 등록에 실패하였습니다.", false)); }
+					/* int rsultdel = shopservice.delShopbag(request.getUseremail()); */
+					return  Utils.responseentity(cms.getMessage(200, "주문이 완료되었습니다", true));
 					 
 				}else {
 					return  Utils.responseentity(cms.getMessage(401, "주문배송 등록에 실패하였습니다.", false));
