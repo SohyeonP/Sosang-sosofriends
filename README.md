@@ -33,27 +33,27 @@
 
 -------
 
-![IA](C:\Users\sohyeonPark\Desktop\mycode\Sosang-sosofriends\src\main\resources\static\assets\img\preiview\img6.png)
+![IA](src\main\resources\static\assets\img\preiview\img6.png)
 
 #### **개발기간 및 진행사항**
 
 -------
 
-![plan](C:\Users\sohyeonPark\Desktop\mycode\Sosang-sosofriends\src\main\resources\static\assets\img\preiview\img4.png)
+![plan](src\main\resources\static\assets\img\preiview\img4.png)
 
 ## **ERD**
 
 ------
 
-![erd](C:\Users\sohyeonPark\Desktop\mycode\Sosang-sosofriends\src\main\resources\static\assets\img\preiview\erd.png)
+![erd](src\main\resources\static\assets\img\preiview\erd.png)
 
 **Design**
 
 ------
 
-![img](C:\Users\sohyeonPark\Desktop\mycode\Sosang-sosofriends\src\main\resources\static\assets\img\preiview\img1.png)
+![img](src\main\resources\static\assets\img\preiview\img1.png)
 
-![img2](C:\Users\sohyeonPark\Desktop\mycode\Sosang-sosofriends\src\main\resources\static\assets\img\preiview\img1_1.png)
+![img2](src\main\resources\static\assets\img\preiview\img1_1.png)
 
 #### **Built With**
 
