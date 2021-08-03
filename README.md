@@ -28,10 +28,17 @@
 > R0001T20200301
 
 ​		**캐릭터 종류+등록순서+카테고리 년월일**
+#### **Built With**
+-------
 
+**Back-end framework**:Springboot  
+**Front-end framework**: Javascript  
+**SQL**:MySql  
+**Design&MarkUp**: Html,CSS,XD,Zepplin 
 ## **IA**
 
 -------
+
 
 ![img6](https://user-images.githubusercontent.com/42880862/127945025-22751615-d54d-4a69-8441-e9ee2228d254.png)
 
@@ -55,12 +62,7 @@
 
 ![img1_1](https://user-images.githubusercontent.com/42880862/127945170-78556440-a359-4e42-85f4-51be09af77ee.png)
 
-#### **Built With**
-
-**Back-end framework**:Springboot  
-**Front-end framework**: Javascript  
-**SQL**:MySql  
-**Design&MarkUp**: Html,CSS,XD,Zepplin  
+ 
 
 ####  **License**
 Distributed under the MIT License. See `LICENSE` for more information.
