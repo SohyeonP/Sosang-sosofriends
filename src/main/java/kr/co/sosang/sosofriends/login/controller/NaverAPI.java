@@ -22,9 +22,7 @@ public class NaverAPI {
 		String accessToken = "";
 		String refreshToken ="";
 		
-		String reqURL= "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code";
-			reqURL += ("&client_id=" + "gVb2zptEhIq39x0FnnPq");
-			reqURL += ("&client_secret=" + "CP9NVJbtDd");
+		String reqURL= "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code})";
 			reqURL += ("&redirect_uri=" + URLEncoder.encode("http://localhost:8080/login","UTF-8"));
 			reqURL += ("&code=" + code);
 			reqURL += ("&state=" + state);

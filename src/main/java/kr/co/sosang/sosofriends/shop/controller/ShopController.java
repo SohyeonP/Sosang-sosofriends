@@ -1,5 +1,6 @@
 package kr.co.sosang.sosofriends.shop.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -98,12 +99,17 @@ public class ShopController {
 		try {
 				
 			List<Map<String,Object>> resultList = shopservice.getBagList(request.getUseremail());
+			
+			
+			Map<String,Object> test= new HashMap();
+			
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@"+resultList);
 			if(resultList !=null) {
-				/*paramMap.put("useremail", resultList.get(0).get("").toString());
+				paramMap.put("useremail", resultList.get(0).get("").toString());
 				paramMap.put("kfs_pdtname", resultList.get(0).get("").toString());
 				paramMap.put("kfs_pdtprice", resultList.get(0).get("").toString());
 				paramMap.put("kfs_pdtnum", resultList.get(0).get("").toString());
-				paramMap.put("kfs_pdtcnt", resultList.get(0).get("").toString());*/
+				paramMap.put("kfs_pdtcnt", resultList.get(0).get("").toString());
 				
 				
 				/* String i = Integer.toString(totalprice); */

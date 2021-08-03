@@ -31,7 +31,7 @@ public class LoginController {
 			SecureRandom state = new SecureRandom();
 		
 	        String url = "https://kauth.kakao.com/oauth/authorize?";
-	        url += ("client_id=" + "d7a451134c2548e9b0b111051f80c34e");
+	        url += ("client_id=" + "{client_id}");
 	        url += ("&redirect_uri=http://localhost:8080/login");
 	        url += ("&response_type=code");
 	        url += ("&state=" + state);
@@ -47,7 +47,7 @@ public class LoginController {
 		SecureRandom state = new SecureRandom();
 		
 		String url = "https://nid.naver.com/oauth2.0/authorize?response_type=code";
-		url += ("&client_id=" + "gVb2zptEhIq39x0FnnPq");
+		url += ("&client_id=" + "{client_id}");
 		url += ("&redirect_uri=" + URLEncoder.encode("http://localhost:8080/login","UTF-8"));
 		url += ("&state=" + state);
 		
@@ -65,7 +65,7 @@ public class LoginController {
 		
 		String url = "https://accounts.google.com/o/oauth2/v2/auth?scope=profile%20email&response_type=code";
 		url += ("&access_type=" + "offline");
-		url += ("&client_id=" + "166917974905-hpbuk02e74hrvbpbjo5afk059s4ip4of.apps.googleusercontent.com");
+		url += ("&client_id=" + "client_id");
 		url += ("&redirect_uri=" + URLEncoder.encode("http://localhost:8080/login","UTF-8"));
 		url += ("&state=" + state);
 		
@@ -118,7 +118,7 @@ public class LoginController {
 	public void kakaologout(HttpSession session, HttpServletResponse response) throws IOException {
 		
 		String url = "https://kauth.kakao.com/oauth/logout?";
-        url += ("client_id=" + "d7a451134c2548e9b0b111051f80c34e");
+        url += ("client_id=" + "client_id");
         url += ("&logout_redirect_uri=http://localhost:8080/logout");
         
 		response.sendRedirect(url);
@@ -128,7 +128,7 @@ public class LoginController {
 	public void naverlogout(HttpSession session, HttpServletResponse response) throws IOException {
 		
 		String url = "https://nid.naver.com/oauth2.0/token?grant_type=delete";
-        url += ("&client_id=" + "gVb2zptEhIq39x0FnnPq");
+        url += ("&client_id=" + "{Client id}");
         url += ("&client_secret=" + "CP9NVJbtDd");
         url += ("&access_token=" + session.getAttribute("access_token"));
         url += ("&service_provider=NAVER");

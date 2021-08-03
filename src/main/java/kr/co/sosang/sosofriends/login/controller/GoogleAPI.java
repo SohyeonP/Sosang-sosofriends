@@ -32,8 +32,8 @@ public class GoogleAPI {
 		      BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
 		      StringBuilder sb = new StringBuilder();
 		      sb.append("grant_type=authorization_code");
-		      sb.append("&client_id=166917974905-hpbuk02e74hrvbpbjo5afk059s4ip4of.apps.googleusercontent.com");
-		      sb.append("&client_secret=AP1Jgy6CCUfqgyK5TtQaFhEl");
+		      sb.append("&client_id={google_Client_ID}");
+		      sb.append("&client_secret={google_API_KEY}");
 			  sb.append("&redirect_uri=http://localhost:8080/login");
 			  sb.append("&code="+code);
 				
