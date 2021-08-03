@@ -45,15 +45,15 @@
 
 ------
 
-![erd](src\main\resources\static\assets\img\preiview\erd.png)
+![erd](https://user-images.githubusercontent.com/42880862/127945132-cfec4c0b-54c2-4023-909a-8abc865fb5d0.png)
 
 **Design**
 
 ------
 
-![img](src\main\resources\static\assets\img\preiview\img1.png)
+![img1](https://user-images.githubusercontent.com/42880862/127945159-5140bb34-7033-47cf-8670-5a66660dced8.png)
 
-![img2](src\main\resources\static\assets\img\preiview\img1_1.png)
+![img1_1](https://user-images.githubusercontent.com/42880862/127945170-78556440-a359-4e42-85f4-51be09af77ee.png)
 
 #### **Built With**
 
