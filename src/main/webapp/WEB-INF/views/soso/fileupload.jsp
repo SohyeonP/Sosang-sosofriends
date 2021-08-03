@@ -24,7 +24,7 @@
             <label for="price" class="form-label">제품 가격</label>
             <input type="number" name="p_price" class="form-control" id="price">
             <label for="charselect" class="form-label">캐릭터 종류</label>
-            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="charselect" name="character_code">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="charselect" name="p_ccode">
                 <option selected>캐릭터 선택</option>
                     <option value="R">라이언</option>
                     <option value="A">어피치</option>
@@ -40,7 +40,7 @@
                     <option value="P">팬다주이너</option>
                 </select>
                 <label for="cateselect" class="form-label">카테고리 종류</label>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="cateselect" name="cate_code">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="cateselect" name="p_kcode">
                     <option selected>카테고리 선택</option>
                     <option value="Y">테마기획전</option>
                     <option value="T">토이</option>

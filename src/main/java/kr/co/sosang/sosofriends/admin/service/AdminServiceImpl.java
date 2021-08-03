@@ -41,6 +41,7 @@ public class AdminServiceImpl implements AdminService {
 		param.put("code", code);
 		param.put("img", i_name.get("saveFileName"));
 		
+		
 		int resultset = admindao.addItems(param);
 		
 		if(resultset != 0) {

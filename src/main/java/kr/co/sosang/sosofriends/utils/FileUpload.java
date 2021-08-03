@@ -18,7 +18,7 @@ public class FileUpload {
 		 * filesavepath
 		 * ="C:\\Users\\sohyeonPark\\Desktop\\mycode\\Sosang-sosofriends\\src\\main\\webapp\\WEB-INF\\itemimages";
 		 */
-		 filesavepath = "C:\\project\\sosofriends\\src\\main\\webapp\\WEB-INF\\itemimages";
+		 filesavepath = "C:\\project\\sosofriends\\src\\main\\resources\\static\\assets\\itemimages";
 		 fileurl = "http://localhost:8080/sosofriends/items";
 
 
