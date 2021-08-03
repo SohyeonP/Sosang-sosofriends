@@ -33,13 +33,13 @@
 
 -------
 
-![IA](src\main\resources\static\assets\img\preiview\img6.png)
+![img6](https://user-images.githubusercontent.com/42880862/127945025-22751615-d54d-4a69-8441-e9ee2228d254.png)
 
 #### **개발기간 및 진행사항**
 
 -------
 
-![plan](src\main\resources\static\assets\img\preiview\img4.png)
+![img4](https://user-images.githubusercontent.com/42880862/127945087-e9fe40a9-d12e-431e-adfc-9f5692f39a74.png)
 
 ## **ERD**
 
